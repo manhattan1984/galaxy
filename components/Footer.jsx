@@ -96,7 +96,7 @@ const Footer = () => {
             <Box display="flex" ml>
               <SvgIcon component={Email} color="primary" />
               <Typography ml variant="body">
-                ZipoAidInvestmentz@gmail.com
+                GalaxydholdingsInvestmentz@gmail.com
               </Typography>
             </Box>
             <Box display="flex" my ml>

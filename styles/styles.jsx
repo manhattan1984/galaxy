@@ -5,30 +5,30 @@ import HeroBox from "../public/hero-bg.png";
 
 const themeOptions = {
   palette: {
-    primary: { main: "#618833" },
+    primary: { main: "#e77e1b" },
     secondary: {
-      main: "#03a9f4",
+      main: "#618833",
     },
   },
   typography: {
     fontFamily: "Raleway",
     h1: {
-      fontFamily: "Lobster Two",
+      fontFamily: "Montserrat",
     },
     h2: {
-      fontFamily: "Lobster Two",
+      fontFamily: "Montserrat",
     },
     h3: {
-      fontFamily: "Lobster Two",
+      fontFamily: "Montserrat",
     },
     h4: {
-      fontFamily: "Lobster Two",
+      fontFamily: "Montserrat",
     },
     h5: {
-      fontFamily: "Lobster Two",
+      fontFamily: "Montserrat",
     },
     h6: {
-      fontFamily: "Lobster Two",
+      fontFamily: "Montserrat",
     },
   },
 };

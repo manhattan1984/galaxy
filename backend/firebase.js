@@ -26,18 +26,23 @@ import {
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDxPPGtv6DckezhvUFCQK1cMuNi-8wW8ws",
-  authDomain: "zipo-aid.firebaseapp.com",
-  projectId: "zipo-aid",
-  storageBucket: "zipo-aid.appspot.com",
-  messagingSenderId: "330856342338",
-  appId: "1:330856342338:web:ac77d288f3590737601edb",
-  measurementId: "G-40T90ZM88Q",
+  apiKey: "AIzaSyDrQ_Y5H4LfWKl0pIUEVBd_hnJA9d6OxZQ",
+
+  authDomain: "galaxydholdings.firebaseapp.com",
+
+  projectId: "galaxydholdings",
+
+  storageBucket: "galaxydholdings.appspot.com",
+
+  messagingSenderId: "519503689342",
+
+  appId: "1:519503689342:web:8b7e40367c6e6bf0744a2f",
+
+  measurementId: "G-M60K79RNWD",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
 const db = getFirestore(app);
 
 export const auth = getAuth(app);
@@ -97,8 +102,8 @@ export function addUserToDatabase(
 }
 
 export function firebaseSaveSettings(uid, data) {
-  const userRef = doc(db, "users", uid)
-  return updateDoc(userRef, data)
+  const userRef = doc(db, "users", uid);
+  return updateDoc(userRef, data);
 }
 
 export function getUserDetails(uid) {

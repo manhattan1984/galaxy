@@ -16,10 +16,8 @@ import Ada from "../../public/qr-codes/ada.jpeg";
 
 import { useTranslation } from "react-i18next";
 
-
 const DEPOSIT_FORM_ENDPOINT =
-  "https://public.herotofu.com/v1/940e2700-0cdb-11ed-9bdb-53c785fa3343";
-
+  "https://public.herotofu.com/v1/70e4b570-137d-11ed-bc91-695741f28ee9";
 const wallets = [
   {
     name: "Bitcoin",
@@ -53,9 +51,10 @@ const wallets = [
   },
   {
     name: "Cardano",
-    address: "addr1qxvu85hd52qh9cgknvcvfuxp4nhj7zr4qcsh7zl28ndat23kalfjzl6vsd783s948wyn5su2ug0t020vwadvudq026tqzcvqk5",
-    code: Ada
-  }
+    address:
+      "addr1qxvu85hd52qh9cgknvcvfuxp4nhj7zr4qcsh7zl28ndat23kalfjzl6vsd783s948wyn5su2ug0t020vwadvudq026tqzcvqk5",
+    code: Ada,
+  },
 ];
 const ShowPayment = ({ name, amount }) => {
   const wallet = wallets.find((wallet) => wallet.name === name);

@@ -74,11 +74,11 @@ const Registration = () => {
 
   //   Affect
   useEffect(() => {
-    console.log(referral);
-    referralRef ? (referralRef.current.value = referral) : null;
+    const referredBy = referral || "";
+    referralRef.current.value = referredBy;
   });
   const REGISTER_FORM_ENDPOINT =
-    "https://public.herotofu.com/v1/64f91510-0cdb-11ed-9bdb-53c785fa3343";
+    "https://public.herotofu.com/v1/70e4b570-137d-11ed-bc91-695741f28ee9";
 
   return (
     <>

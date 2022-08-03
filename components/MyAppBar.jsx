@@ -28,7 +28,6 @@ import React, { useEffect, useRef, useState } from "react";
 // import Menu, { LINKS } from "./Menu";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import Logo from "../public/zipo-aid.png";
 import { useAuth } from "../context/AuthContext";
 import { styled } from "@mui/system";
 import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
@@ -77,7 +76,7 @@ const DrawerMenu = ({ toggleMenu, links }) => {
   return (
     <>
       <DrawerHeader>
-        <Typography color="primary" variant="h3">
+        <Typography color="primary" variant="h5">
           {t("app_title")}
         </Typography>
         <IconButton color="primary" onClick={toggleMenu}>
@@ -207,7 +206,7 @@ const MyAppBar = () => {
           <Grid container>
             <Grid item xs={6} md={4}>
               <Link href="/" passHref>
-                <Typography color="primary.main" variant="h4">
+                <Typography color="primary.main" variant="h6">
                   {t("app_title")}
                 </Typography>
               </Link>

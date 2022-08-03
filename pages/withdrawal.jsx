@@ -17,8 +17,7 @@ import { useAuth } from "../context/AuthContext";
 const currencies = ["Bitcoin", "Ethereum", "Bitcoin Cash"];
 
 const WITHDRAW_FORM_ENDPOINT =
-  "https://public.herotofu.com/v1/7ef17d40-0cdb-11ed-9bdb-53c785fa3343";
-
+  "https://public.herotofu.com/v1/8aad0cf0-137d-11ed-bc91-695741f28ee9";
 const Withdrawal = () => {
   const { t } = useTranslation();
   const amountRef = useRef();

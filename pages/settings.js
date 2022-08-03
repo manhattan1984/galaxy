@@ -26,11 +26,11 @@ const Settings = () => {
   useEffect(() => {
     getAddresses();
     userRef.current.value = currentUser.email;
-    btcRef.current.value = btc;
-    bchRef.current.value = bch;
-    xrpRef.current.value = xrp;
-    adaRef.current.value = ada;
-    ethRef.current.value = eth;
+    btcRef.current.value = btc || "";
+    bchRef.current.value = bch || "";
+    xrpRef.current.value = xrp || "";
+    adaRef.current.value = ada || "";
+    ethRef.current.value = eth || "";
 
     console.log(btc, eth, bch, xrp, ada);
   });
