@@ -21,39 +21,13 @@ const DEPOSIT_FORM_ENDPOINT =
 const wallets = [
   {
     name: "Bitcoin",
-    address: "bc1q2wv5g8pndyxk6t4uaeqnmth9gf8uns2a4wwwmd",
+    address: "17x9d86hSNUaekLxki5SVF1LHByUHJec4T",
     code: Bitcoin,
   },
   {
-    name: "Ethereum",
-    address: "0x2DCD8d38c0De3e9841D86BC15Cc90A1D4FdC8D99",
+    name: "USDT",
+    address: "TH3PshVZ8kyDPGaR58qxjwwUpHmmHwacHd",
     code: Ethereum,
-  },
-  {
-    name: "XRP",
-    address: "rwAL3ZNtMN3PjYHgLYgwvJs67KqAVjBsqB",
-    code: Xrp,
-  },
-  {
-    name: "Litecoin",
-    address: "ltc1q77axw5qhhn0lala6u36c78vypw5ssxvymzyg6z",
-    code: Litecoin,
-  },
-  {
-    name: "Bitcoin Cash",
-    address: "qpm67pwa8egfug3s0uh03n0uje972xfjdyvn0766pc",
-    code: BitcoinCash,
-  },
-  {
-    name: "Solana",
-    address: "eYNPJUg82A2XaasHs6T9goCoeGq3DVCBV6oz5pxYaq2",
-    code: Solana,
-  },
-  {
-    name: "Cardano",
-    address:
-      "addr1qxvu85hd52qh9cgknvcvfuxp4nhj7zr4qcsh7zl28ndat23kalfjzl6vsd783s948wyn5su2ug0t020vwadvudq026tqzcvqk5",
-    code: Ada,
   },
 ];
 const ShowPayment = ({ name, amount }) => {
