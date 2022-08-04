@@ -201,12 +201,16 @@ const MyAppBar = () => {
 
   return (
     <>
-      <AppBar position="sticky" sx={{ bgcolor: "white" }}>
+      <AppBar position="sticky">
         <Toolbar>
-          <Grid container>
+          <Grid container alignItems={"center"}>
             <Grid item xs={6} md={4}>
               <Link href="/" passHref>
-                <Typography color="primary.main" variant="h6">
+                <Typography
+                  sx={{ height: "100%", alignSelf: "center" }}
+                  color="primary.main"
+                  variant="h6"
+                >
                   {t("app_title")}
                 </Typography>
               </Link>

@@ -64,9 +64,8 @@
   "deposit": "Total Deposit",
   "earned": "Total Earned",
 
-  "hero_1": "Buy & trade on the",
-  "hero_2": "original crypto exchange.",
-  "hero_body": "Galaxydholdings Investment Trader provides reliable, consistent and profitable financial assistance to our clients around the world. Investments in our trading platforms are securely secured and managed only by our experienced traders to ensure better risk management and profitable trading.",
+  "hero_1": "Invest in tomorrow, today.",
+  "hero_2": "Get diversified crypto and blockchain exposure with our institutional-grade funds.",
 
   "ease": "Ease of Trading",
   "ease_1": "Intuitive Interface",
@@ -84,14 +83,14 @@
   "reliable_3": "Industry-Leading Uptime",
 
   "z_a_invest": "Galaxydholdings INVESTMENT PLANS",
-  "unlimited": "Unlimited access with our web mobile wallet.",
+  "unlimited": "The funds arm of Galaxy Digital",
   "advanced": "ADVANCED TOOLS PACKED IN AN INTUITIVE INTERFACE",
-  "z_a_body": "Stay connected to the market with our web mobile wallet. Featuring advanced order types and analytical tools for experienced traders, as well as a simple buy & sell interface for those just getting started.",
+  "z_a_body": "Galaxy Digital is a diversified financial services innovator on a mission to institutionalize digital assets and blockchain technology. We’re building one of the most comprehensive platforms in the sector with five business lines and 350+ employees across six offices worldwide.",
 
   "seen": "As Seen On",
-  "tools": "Advanced trading tools.",
+  "tools": "How big are you thinking?",
   "professional": "PROFESSIONAL ACCESS, NON-STOP AVAILABILITY",
-  "advanced_body": "We provide premium access to crypto trading for both individuals and institutions through high liquidity, reliable order execution and constant uptime.",
+  "advanced_body": "The world is rapidly digitizing, and blockchain will play a critical role in this global transformation. For those interested in exploiting this trend, invest in a basket of digital assets and get diversified exposure to the major categories of blockchain technology. Investing in index products has historically provided investors opportunities to capture the upside of new asset classes without having to pick “winners.” Investing in this new asset class is no different. Our index products allow investors to broadly participate in the overall trend of digitization through diversified exposure to digital assets.",
   "apis": "A RANGE OF POWERFUL APIS",
 
   "apis_body": "Set up your own trading interface or deploy your algorithmic strategy with our high-performance FIX and HTTP APIs. Connect to our WebSocket for real-time data streaming.",
@@ -185,5 +184,21 @@
   "cardano_wallet": "ADA Wallet",
   "ripple_wallet": "XRP Wallet",
   "save": "Save Settings",
-  "saved_settings": "Saved Settings!"
+  "saved_settings": "Saved Settings!",
+
+  "o_n_1_t": "$1.7B",
+  "o_n_1_s": "In AUM",
+  "o_n_1_b": "From third-party capital.",
+
+  "o_n_2_t": "5",
+  "o_n_2_s": "Business Lines",
+  "o_n_2_b": "Asset Management ",
+
+  "o_n_3_t": "$2.1B",
+  "o_n_3_s": "Market Cap",
+  "o_n_3_b": "Publicly traded on TSX/",
+
+  "o_n_4_t": "375+",
+  "o_n_4_s": "Professionals",
+  "o_n_4_b": "Top-tier operators with traditional finance and technology expertise"
 }

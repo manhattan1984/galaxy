@@ -5,11 +5,14 @@ import HeroBox from "../public/hero-bg.png";
 
 const themeOptions = {
   palette: {
+    mode: "dark",
+
     primary: { main: "#e77e1b" },
     secondary: {
       main: "#618833",
     },
   },
+
   typography: {
     fontFamily: "Raleway",
     h1: {

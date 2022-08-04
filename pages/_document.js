@@ -17,7 +17,7 @@ const Document = () => {
       <body>
         <Main />
         <NextScript />
-        <Script
+        {/* <Script
           id="chatBot"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
@@ -35,7 +35,7 @@ const Document = () => {
             </script>
             <!--End of Tawk.to Script-->`,
           }}
-        />
+        /> */}
       </body>
     </Html>
   );

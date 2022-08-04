@@ -22,7 +22,7 @@ const Referrals = () => {
             {t("referral_link")}
           </Typography>
           <Link variant="caption">
-            https://www.Galaxydholdingsinvestments/register/{username}
+            https://www.galaxydholdings.com/register/{username}
           </Link>
         </Box>
       </Paper>
