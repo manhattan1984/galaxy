@@ -82,7 +82,9 @@ export default function Home() {
             </Typography>
 
             <Button
-              sx={{ display: "block" }}
+              variant="contained"
+              size="large"
+              sx={{ display: "block", color: "white" }}
               onClick={() => {
                 router.push("/register");
               }}
