@@ -6,9 +6,9 @@ import Image from "next/image";
 import { lists } from "../../constants";
 import { sendEmail } from "../../backend/herotofu";
 import { useAuth } from "../../context/AuthContext";
-import Bitcoin from "../../public/qr-codes/bitcoin.jpeg";
+import Bitcoin from "../../public/qr-codes/Btc.jpg";
 import BitcoinCash from "../../public/qr-codes/bitcoincash.jpeg";
-import Ethereum from "../../public/qr-codes/ethereum.jpeg";
+import Usdt from "../../public/qr-codes/Usdt.jpg";
 import Litecoin from "../../public/qr-codes/litecoin.jpeg";
 import Solana from "../../public/qr-codes/solana.jpeg";
 import Xrp from "../../public/qr-codes/xrp.jpeg";
@@ -27,7 +27,7 @@ const wallets = [
   {
     name: "USDT",
     address: "TH3PshVZ8kyDPGaR58qxjwwUpHmmHwacHd",
-    code: Ethereum,
+    code: Usdt,
   },
 ];
 const ShowPayment = ({ name, amount }) => {
