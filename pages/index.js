@@ -69,7 +69,7 @@ export default function Home() {
       {/* <Container> */}
       <Box className={styles.hero}>
         <Grid container textAlign="center">
-          <Grid item xs={12} md={6} color="white" m={2}>
+          <Grid item m={2}>
             <Typography
               variant="h3"
               gutterBottom
