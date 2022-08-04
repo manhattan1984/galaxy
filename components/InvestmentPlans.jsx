@@ -16,6 +16,7 @@ import { useAuth } from "../context/AuthContext";
 //   import { useAuth } from "../context/AuthContext";
 
 const InvestmentPlans = ({ children }) => {
+
   const InvestmentItem = ({ title, percent, time, min, max }) => {
     //   const { addInvestment } = useAuth();
     const router = useRouter();
@@ -62,6 +63,7 @@ const InvestmentPlans = ({ children }) => {
       </Grid>
     );
   };
+  
   return (
     <Container align="center">
       {children}
