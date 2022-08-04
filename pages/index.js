@@ -108,7 +108,7 @@ export default function Home() {
 
       <Box m={2}>
         {ourNumbers.map(({ value, title, body }) => (
-          <OurNumbers value={value} title={title} body={body} />
+          <OurNumbers key={value} value={value} title={title} body={body} />
         ))}
       </Box>
 
@@ -143,7 +143,9 @@ export default function Home() {
           {t("tools")}
         </Typography>
 
-        <Typography my={3} variant="body1">{t("advanced_body")}</Typography>
+        <Typography my={3} variant="body1">
+          {t("advanced_body")}
+        </Typography>
       </Box>
 
       {/* </Container> */}
