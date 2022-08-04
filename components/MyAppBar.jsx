@@ -216,7 +216,7 @@ const MyAppBar = () => {
               </Link>
             </Grid>
             {/* Language */}
-            <Grid item xs={3} md={2}>
+            {/* <Grid item xs={3} md={2}>
               <TextField
                 inputRef={langRef}
                 InputProps={{
@@ -239,27 +239,13 @@ const MyAppBar = () => {
                   </MenuItem>
                 ))}
               </TextField>
-              <Box display="flex">
-                {/* {langs.map(({ value, label }) => (
-                  <Typography
-                    key={label}
-                    mr
-                    color="primary"
-                    onClick={() => {
-                      i18next.changeLanguage(value);
-                    }}
-                  >
-                    {label}
-                  </Typography>
-                ))} */}
-              </Box>
-            </Grid>
+            </Grid> */}
 
             {/* Mobile */}
 
             <Grid
               item
-              xs={3}
+              xs={6}
               display={{ xs: "flex", md: "none" }}
               justifyContent="flex-end"
             >
@@ -267,6 +253,7 @@ const MyAppBar = () => {
                 <MenuIcon color="primary" />
               </IconButton>
             </Grid>
+
             {/* Larger */}
             <Grid item md={6} display={{ xs: "none", md: "flex" }}>
               <Grid container justifyContent="flex-end">

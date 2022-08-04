@@ -7,22 +7,19 @@ import {
   Container,
   Grid,
   Typography,
+  Paper,
 } from "@mui/material";
 import { useRouter } from "next/router";
-import { useSnackbar } from "notistack";
 import { useTranslation } from "react-i18next";
 import lists from "../constants/lists";
 import { useAuth } from "../context/AuthContext";
-//   import { useAuth } from "../context/AuthContext";
 
 const InvestmentPlans = ({ children }) => {
-
+  const { t } = useTranslation();
   const InvestmentItem = ({ title, percent, time, min, max }) => {
     //   const { addInvestment } = useAuth();
     const router = useRouter();
     const { currentUser } = useAuth();
-
-    const { t } = useTranslation();
 
     const handleInvestButton = () => {
       // addInvestment(title);
@@ -63,11 +60,11 @@ const InvestmentPlans = ({ children }) => {
       </Grid>
     );
   };
-  
+
   return (
-    <Container align="center">
+    <Container>
       {children}
-      <Grid container spacing={2} my={1}>
+      {/* <Grid container spacing={2} my={1}>
         {lists.investmentPlans.map(
           ({ title, percent, time, min, max }, index) => (
             <InvestmentItem
@@ -80,7 +77,26 @@ const InvestmentPlans = ({ children }) => {
             />
           )
         )}
-      </Grid>
+      </Grid> */}
+      <Paper>
+        <Box p>
+          <Typography
+            variant="h4"
+            gutterBottom
+            sx={{ textTransform: "uppercase" }}
+          >
+            {t("eligibility")}
+          </Typography>
+          <Typography variant="body1" gutterBottom>
+            {t("e_body")}
+          </Typography>
+
+          <Typography variant="h4" gutterBottom>
+            {t("minimum")}
+          </Typography>
+          <Typography variant="body1">{t("min_value")}</Typography>
+        </Box>
+      </Paper>
     </Container>
   );
 };

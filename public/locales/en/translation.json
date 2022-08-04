@@ -82,7 +82,7 @@
   "reliable_2": "24/7 dedicated support",
   "reliable_3": "Industry-Leading Uptime",
 
-  "z_a_invest": "Galaxydholdings INVESTMENT PLANS",
+  "z_a_invest": "GALAXYDHOLDINGS INVESTMENT PLANS",
   "unlimited": "The funds arm of Galaxy Digital",
   "advanced": "ADVANCED TOOLS PACKED IN AN INTUITIVE INTERFACE",
   "z_a_body": "Galaxy Digital is a diversified financial services innovator on a mission to institutionalize digital assets and blockchain technology. We’re building one of the most comprehensive platforms in the sector with five business lines and 350+ employees across six offices worldwide.",
@@ -200,5 +200,11 @@
 
   "o_n_4_t": "375+",
   "o_n_4_s": "Professionals",
-  "o_n_4_b": "Top-tier operators with traditional finance and technology expertise"
+  "o_n_4_b": "Top-tier operators with traditional finance and technology expertise",
+
+  "eligibility": "Eligibility Requirements",
+  "e_body": "Accredited Investor - You are accredited as an individual if you made over $200,000 in the last two calendar years (or $300,000 with your spouse), or if you have greater than $1,000,000 in liquid net worth, excluding your primary residence.",
+
+  "minimum": "MINIMUM INVESTMENT",
+  "min_value": "$25,000"
 }
