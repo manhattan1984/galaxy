@@ -65,50 +65,50 @@ const Footer = () => {
       <Grid container spacing={2}>
         <Grid item xs={12} md={6} lg={4}>
           <Typography variant="h6" my={2}>
-            {t("about")}
+            {/* {t("about")} */}
           </Typography>
 
-          {aboutLinks.map(({ link, text }) => (
+          {/* {aboutLinks.map(({ link, text }) => (
             <FooterLinks key={text} link={link} text={text} />
-          ))}
+          ))} */}
         </Grid>
         <Grid item xs={12} md={6} lg={4}>
           <Typography variant="h6" my={2}>
-            {t("legal")}
+            {/* {t("legal")} */}
           </Typography>
 
-          {legalLinks.map(({ link, text }) => (
+          {/* {legalLinks.map(({ link, text }) => (
             <FooterLinks key={text} link={link} text={text} />
-          ))}
+          ))} */}
         </Grid>
         <Grid item xs={12} md={6} lg={4}>
-          <Typography variant="h6">{t("contact")}</Typography>
+          {/* <Typography variant="h6">{t("contact")}</Typography> */}
           <Box>
-            <IconButton>
+            {/* <IconButton>
               <Telegram color="primary" />
-            </IconButton>
+            </IconButton> */}
             <Box display="flex" ml>
-              <SvgIcon component={Email} color="primary" />
+              {/* <SvgIcon component={Email} color="primary" /> */}
               <Typography ml variant="body">
-                {t("our_email")}
+                {/* {t("our_email")} */}
               </Typography>
             </Box>
             <Box display="flex" my ml>
-              <SvgIcon component={LocationOn} color="primary" />
+              {/* <SvgIcon component={LocationOn} color="primary" />
               <Typography ml variant="body">
                 {t("address")}
-              </Typography>
+              </Typography> */}
             </Box>
           </Box>
         </Grid>
       </Grid>
       <Divider />
       <Typography variant="body1" my>
-        {t("footer_1")}
+        {/* {t("footer_1")} */}
       </Typography>
       <br />
       <Typography variant="body2" my>
-        {t("footer_2")}{" "}
+        {/* {t("footer_2")}{" "} */}
       </Typography>
 
       <Divider />

@@ -155,38 +155,38 @@ const MyAppBar = () => {
       section: "transactions",
       icon: AttachMoney,
     },
-    {
-      name: t("investment_history"),
-      link: "/investments",
-      section: "transactions",
-      icon: History,
-    },
+    // {
+    //   name: t("investment_history"),
+    //   link: "/investments",
+    //   section: "transactions",
+    //   icon: History,
+    // },
     {
       name: t("withdraw_fund"),
       link: "/withdrawal",
       section: "transactions",
       icon: AttachMoney,
     },
-    {
-      name: t("pro_trading"),
-      link: "/protrading",
-      section: "transactions",
-      icon: ShowChart,
-    },
+    // {
+    //   name: t("pro_trading"),
+    //   link: "/protrading",
+    //   section: "transactions",
+    //   icon: ShowChart,
+    // },
     // Others
     { name: t("profile"), link: "/profile", section: "Others", icon: Person },
-    {
-      name: t("referrals"),
-      link: "/referrals",
-      section: "Others",
-      icon: Group,
-    },
-    {
-      name: t("settings"),
-      link: "/settings",
-      section: "Others",
-      icon: SettingsIcon,
-    },
+    // {
+    //   name: t("referrals"),
+    //   link: "/referrals",
+    //   section: "Others",
+    //   icon: Group,
+    // },
+    // {
+    //   name: t("settings"),
+    //   link: "/settings",
+    //   section: "Others",
+    //   icon: SettingsIcon,
+    // },
     {
       name: t("log_out"),
       link: "/",
