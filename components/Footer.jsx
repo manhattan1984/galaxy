@@ -102,7 +102,7 @@ const Footer = () => {
           </Box>
         </Grid>
       </Grid>
-      <Divider />
+      {/* <Divider /> */}
       <Typography variant="body1" my>
         {/* {t("footer_1")} */}
       </Typography>

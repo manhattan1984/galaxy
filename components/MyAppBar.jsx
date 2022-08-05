@@ -82,25 +82,34 @@ const DrawerMenu = ({ toggleMenu, links }) => {
         </IconButton>
       </DrawerHeader>
       <Divider />
-      <List sx={{ width: "50vw" }}>
-        {links.map(({ name, link, icon }) => (
-          <ListItem key={name} disablePadding>
-            <ListItemButton
+
+      {currentUser ? (
+        <>
+          <Typography variant="h6" textAlign="center">
+            Invest Now
+          </Typography>
+          <Box>
+            <Button
+              fullWidth
               onClick={() => {
-                router.push(link);
+                router.push("/stocks");
                 toggleMenu();
-                link === "/" ? logOut() : null;
               }}
             >
-              <ListItemIcon>
-                <SvgIcon color="secondary" component={icon} />
-              </ListItemIcon>
-              <ListItemText primary={name} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      {currentUser ? null : (
+              Stocks
+            </Button>
+            <Button
+              fullWidth
+              onClick={() => {
+                router.push("/mining");
+                toggleMenu();
+              }}
+            >
+              Mining
+            </Button>
+          </Box>
+        </>
+      ) : (
         <Box display="flex" flexDirection="column" m>
           {" "}
           <Button
@@ -126,6 +135,24 @@ const DrawerMenu = ({ toggleMenu, links }) => {
           </Button>
         </Box>
       )}
+      <List sx={{ width: "50vw" }}>
+        {links.map(({ name, link, icon }) => (
+          <ListItem key={name} disablePadding>
+            <ListItemButton
+              onClick={() => {
+                router.push(link);
+                toggleMenu();
+                link === "/" ? logOut() : null;
+              }}
+            >
+              <ListItemIcon>
+                <SvgIcon color="secondary" component={icon} />
+              </ListItemIcon>
+              <ListItemText primary={name} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
     </>
   );
 };
@@ -149,12 +176,12 @@ const MyAppBar = () => {
   const authPages = [
     { name: t("dashboard"), link: "/dashboard", section: "main", icon: Home },
     // Transactions
-    {
-      name: t("invest_now"),
-      link: "/investnow",
-      section: "transactions",
-      icon: AttachMoney,
-    },
+    // {
+    //   name: t("invest_now"),
+    //   link: "/investnow",
+    //   section: "transactions",
+    //   icon: AttachMoney,
+    // },
     // {
     //   name: t("investment_history"),
     //   link: "/investments",

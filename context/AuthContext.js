@@ -14,6 +14,7 @@ import {
   getUserDetails,
   firebaseResetEmail,
   firebaseSaveSettings,
+  uploadIDToFirebase,
 } from "../backend/firebase";
 
 const AuthContext = createContext();
@@ -32,6 +33,13 @@ export function AuthProvider({ children }) {
   const [totalDeposit, setTotalDeposit] = useState(0);
   const [investmentHistory, setInvestmentHistory] = useState([]);
   const [withdrawals, setWithdrawals] = useState([]);
+  const [isUnderReview, setIsUnderReview] = useState();
+  const [isVerified, setIsVerified] = useState();
+
+  const [firstName, setFirstName] = useState();
+  const [lastName, setLastName] = useState();
+  const [phone, setPhone] = useState();
+
   const { enqueueSnackbar } = useSnackbar();
 
   const [btc, setBtc] = useState("");
@@ -153,12 +161,30 @@ export function AuthProvider({ children }) {
     } catch (error) {}
   }
 
-  async function getAuthorized() {
+  async function getVerified() {
     try {
       const docSnap = await getUserDetails(getUid());
       if (docSnap.exists()) {
-        const isAuthorized = getData(docSnap).authorized;
-        return isAuthorized;
+        const data = getData(docSnap);
+        console.log(data.review);
+        setIsUnderReview(data.review);
+        setIsVerified(data.verified);
+      } else {
+        console.log("Doc Not Found");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function getProfileDetails() {
+    try {
+      const docSnap = await getUserDetails(getUid());
+      if (docSnap.exists()) {
+        const data = getData(docSnap);
+        setFirstName(data.firstname);
+        setLastName(data.lastname);
+        setPhone(data.countryCode.toString() + data.phoneNumber.toString());
       } else {
         console.log("Doc Not Found");
       }
@@ -217,6 +243,10 @@ export function AuthProvider({ children }) {
     } catch (error) {}
   }
 
+  function uploadID(file, username) {
+    uploadIDToFirebase(file, username);
+  }
+
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setCurrentUser(user);
@@ -237,13 +267,14 @@ export function AuthProvider({ children }) {
     changePassword,
     addInvestment,
     getInvestmentsHistory,
+    getProfileDetails,
     saveSettings,
     getAddresses,
     investmentHistory,
     withdrawals,
     getWithdrawals,
     addWithdrawal,
-    getAuthorized,
+    getVerified,
     username,
     getUsername,
     activeInvestment,
@@ -254,6 +285,12 @@ export function AuthProvider({ children }) {
     bch,
     xrp,
     ada,
+    uploadID,
+    isUnderReview,
+    isVerified,
+    firstName,
+    lastName,
+    phone,
   };
 
   return (
