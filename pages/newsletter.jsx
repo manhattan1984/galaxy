@@ -9,7 +9,7 @@ import { Box, Container, Paper, Button } from "@mui/material";
 import { useSnackbar } from "notistack";
 import React, { useState, useRef } from "react";
 
-const newsletter = () => {
+const Newsletter = () => {
   const [checked, setChecked] = useState(false);
   const firstNameRef = useRef();
   const lastNameRef = useRef();
@@ -94,4 +94,4 @@ const newsletter = () => {
   );
 };
 
-export default newsletter;
+export default Newsletter;
