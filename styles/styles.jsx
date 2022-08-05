@@ -6,10 +6,17 @@ import HeroBox from "../public/hero-bg.png";
 const themeOptions = {
   palette: {
     mode: "dark",
-
     primary: { main: "#e77e1b" },
     secondary: {
       main: "#618833",
+    },
+    background: {
+      default: "#00264a",
+      paper: "#00264a;",
+    },
+    text: {
+      primary: "#fff",
+      secondary: "#e8f2e0",
     },
   },
 

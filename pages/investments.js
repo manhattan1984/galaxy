@@ -21,7 +21,7 @@ const Investments = () => {
       >
         <Paper>
           <Box pt={7} pb={15}>
-            <Typography pb={2} variant="h5" color="GrayText">
+            <Typography pb={2} variant="h5" color="text.secondary">
               {t("no_investments")}
             </Typography>
             <SvgIcon fontSize="large" component={CloudCircleSharp} />

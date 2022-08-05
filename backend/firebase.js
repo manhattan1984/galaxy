@@ -80,7 +80,10 @@ export function addUserToDatabase(
   uid,
   firstname,
   lastname,
-  username
+  username,
+  phoneNumber,
+  countryCode,
+  country
 ) {
   const data = {
     email,
@@ -96,6 +99,9 @@ export function addUserToDatabase(
     activeInvestment: "",
     totalDeposit: 0,
     totalEarned: 0,
+    phoneNumber,
+    countryCode,
+    country,
   };
   const newUserRef = doc(db, "users", uid);
   return setDoc(newUserRef, data);

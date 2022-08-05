@@ -10,7 +10,7 @@ const SignUpAppbar = ({ text, onClick }) => {
       <Toolbar disableGutters>
         <Grid container>
           <Grid item xs={6}>
-            <Typography variant="h5" color="primary.main">
+            <Typography variant="h5" >
               {/* Galaxydholdings */}
             </Typography>
           </Grid>

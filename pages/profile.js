@@ -158,13 +158,13 @@ const Profile = () => {
               </Box>
               <Box>
                 <Box>
-                  <Typography mb={1} color="GrayText" variant="subtitle2">
+                  <Typography mb={1} color="text.secondary" variant="subtitle2">
                     {t("account")}
                   </Typography>
                   <Typography>{currentUser.email}</Typography>
                 </Box>
                 <Box my={1}>
-                  <Typography color="GrayText" variant="subtitle2">
+                  <Typography color="text.secondary" variant="subtitle2">
                     {t("status")}
                   </Typography>
                   <Box>

@@ -32,6 +32,7 @@ export function AuthProvider({ children }) {
   const [totalDeposit, setTotalDeposit] = useState(0);
   const [investmentHistory, setInvestmentHistory] = useState([]);
   const [withdrawals, setWithdrawals] = useState([]);
+  const { enqueueSnackbar } = useSnackbar();
 
   const [btc, setBtc] = useState("");
   const [eth, setEth] = useState("");
@@ -61,7 +62,16 @@ export function AuthProvider({ children }) {
     } catch (error) {}
   }
 
-  async function signUp(email, password, firstname, lastname, username) {
+  async function signUp(
+    email,
+    password,
+    firstname,
+    lastname,
+    username,
+    phoneNumber,
+    countryCode,
+    country
+  ) {
     try {
       const userCredential = await firebaseSignUp(email, password);
       await addUserToDatabase(
@@ -70,12 +80,15 @@ export function AuthProvider({ children }) {
         userCredential.user.uid,
         firstname,
         lastname,
-        username
+        username,
+        phoneNumber,
+        countryCode,
+        country
       );
       setCurrentUser(userCredential.user);
       return true;
     } catch (error) {
-      console.log(error);
+      enqueueSnackbar(error.message, { variant: "error" });
     }
     return false;
   }
@@ -179,7 +192,6 @@ export function AuthProvider({ children }) {
   async function addInvestment(investmentPlan) {
     try {
       await addInvesmentToDatabase(getUid(), investmentPlan);
-      const { enqueueSnackbar } = useSnackbar();
       enqueueSnackbar("Investment Added Successfully", { variant: "success" });
     } catch (error) {
       console.log(error);

@@ -6,6 +6,7 @@ import {
   FormGroup,
   Grid,
   Typography,
+  MenuItem,
 } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
@@ -15,6 +16,8 @@ import { SignUpTextField, SignUpButton } from "../styles/styles";
 import { useSnackbar } from "notistack";
 import { sendEmail } from "../backend/herotofu";
 import { useTranslation } from "react-i18next";
+import { TextField } from "@mui/material";
+import countryCodes from "country-codes-list";
 
 const Registration = () => {
   const { t } = useTranslation();
@@ -24,6 +27,9 @@ const Registration = () => {
   const lastNameRef = useRef();
   const passwordRef = useRef();
   const confirmPasswordRef = useRef();
+  const phoneNumberRef = useRef();
+  const countryCodeRef = useRef();
+  const countryRef = useRef();
   const referralRef = useRef("");
   const { signUp } = useAuth();
   const [error, setError] = useState("");
@@ -45,7 +51,10 @@ const Registration = () => {
         userNameRef.current.value ||
         emailRef.current.value ||
         firstNameRef.current.value ||
-        lastNameRef.current.value
+        lastNameRef.current.value ||
+        phoneNumberRef.current.value ||
+        countryCodeRef.current.value ||
+        countryRef.current.value
       )
     ) {
       enqueueSnackbar(t("complete_form"));
@@ -59,7 +68,10 @@ const Registration = () => {
         passwordRef.current.value,
         firstNameRef.current.value,
         lastNameRef.current.value,
-        userNameRef.current.value
+        userNameRef.current.value,
+        phoneNumberRef.current.value,
+        countryCodeRef.current.value,
+        countryRef.current.value
       );
       correct
         ? router.push("/profile") &&
@@ -72,6 +84,10 @@ const Registration = () => {
     setLoading(false);
   }
 
+  const countryCodesList = countryCodes.customList(
+    "countryCode",
+    "{countryNameEn}: +{countryCallingCode}"
+  );
   //   Affect
   useEffect(() => {
     const referredBy = referral || "";
@@ -129,6 +145,38 @@ const Registration = () => {
             inputRef={lastNameRef}
           />
         </Box>
+
+        <Box display="flex">
+          <SignUpTextField
+            sx={{ maxWidth: "45%", mr: 1 }}
+            label="Code"
+            variant="standard"
+            select
+            inputRef={countryCodeRef}
+          >
+            {Object.values(countryCodesList).map((code) => (
+              <MenuItem key={code} value={code}>
+                {code}
+              </MenuItem>
+            ))}
+          </SignUpTextField>
+
+          <SignUpTextField
+            sx={{ flexGrow: 1 }}
+            label="Phone Number"
+            variant="standard"
+            type="number"
+            inputRef={phoneNumberRef}
+          />
+        </Box>
+
+        <SignUpTextField select variant="standard" label="Country">
+          {Object.values(countryCodesList).map((rawCountry, index) => (
+            <MenuItem key={index} value={rawCountry.split(":")[0]}>
+              {rawCountry.split(":")[0]}
+            </MenuItem>
+          ))}
+        </SignUpTextField>
 
         <SignUpTextField
           variant="standard"

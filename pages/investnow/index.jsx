@@ -95,10 +95,7 @@ const Invest = () => {
           <Grid item xs={12}>
             <TextField fullWidth label={t("amount")} inputRef={amountRef} />
           </Grid>
-          {/* Percent */}
-          {/* <Grid item xs={12}>
-            <TextField label={t("interest")} fullWidth value={0} disabled />
-          </Grid> */}
+         
 
           <Grid item xs={12}>
             <Button

@@ -7,7 +7,7 @@ const About = () => {
   const { t } = useTranslation();
   return (
     <Container>
-      <Typography variant="h3" my={3}>
+      <Typography variant="h4" my={3}>
         {t("zipo_aid_investments")}
       </Typography>
       <Typography>{t("about_1")}</Typography>

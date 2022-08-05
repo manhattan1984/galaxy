@@ -84,7 +84,7 @@ const Signin = () => {
             my={2}
             textAlign="center"
             variant="caption"
-            color="GrayText"
+            color="text.secondary"
           >
             {t("privacy")}
           </Typography>

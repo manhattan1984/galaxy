@@ -7,6 +7,7 @@ import {
   IconButton,
   SvgIcon,
   Link as MuiLink,
+  Button,
 } from "@mui/material";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -60,14 +61,7 @@ const Footer = () => {
   ];
 
   return (
-    <Box
-      color="white"
-      sx={{
-        bgcolor: "#181a20",
-      }}
-      p={2}
-      mt={3}
-    >
+    <Box color="white" p={2} mt={3}>
       <Grid container spacing={2}>
         <Grid item xs={12} md={6} lg={4}>
           <Typography variant="h6" my={2}>
@@ -113,7 +107,21 @@ const Footer = () => {
         {t("footer_1")}
       </Typography>
       <br />
-      <Typography variant="body2">{t("footer_2")} </Typography>
+      <Typography variant="body2" my>
+        {t("footer_2")}{" "}
+      </Typography>
+
+      <Divider />
+
+      <Button
+        sx={{ my: 3 }}
+        variant="outlined"
+        onClick={() => {
+          router.push("/newsletter");
+        }}
+      >
+        NEWSLETTER SIGNUP
+      </Button>
 
       <Divider />
 

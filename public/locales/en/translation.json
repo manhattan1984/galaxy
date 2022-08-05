@@ -193,10 +193,14 @@
   "o_n_2_t": "5",
   "o_n_2_s": "Business Lines",
   "o_n_2_b": "Asset Management ",
+  "o_n_2_b_2": "Investment Banking",
+  "o_n_2_b_3": "Mining",
+  "o_n_2_b_4": "Principal Investments",
+  "o_n_2_b_5": "Trading",
 
   "o_n_3_t": "$2.1B",
   "o_n_3_s": "Market Cap",
-  "o_n_3_b": "Publicly traded on TSX/",
+  "o_n_3_b": "Publicly traded on TSX",
 
   "o_n_4_t": "375+",
   "o_n_4_s": "Professionals",

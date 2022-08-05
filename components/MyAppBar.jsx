@@ -71,20 +71,18 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 
 const DrawerMenu = ({ toggleMenu, links }) => {
   const router = useRouter();
-  const { logOut } = useAuth();
+  const { logOut, currentUser } = useAuth();
   const { t } = useTranslation();
   return (
     <>
       <DrawerHeader>
-        <Typography color="primary" variant="h5">
-          {t("app_title")}
-        </Typography>
-        <IconButton color="primary" onClick={toggleMenu}>
+        <Typography color="primary" variant="h5"></Typography>
+        <IconButton onClick={toggleMenu}>
           <CloseIcon />
         </IconButton>
       </DrawerHeader>
       <Divider />
-      <List>
+      <List sx={{ width: "50vw" }}>
         {links.map(({ name, link, icon }) => (
           <ListItem key={name} disablePadding>
             <ListItemButton
@@ -102,6 +100,32 @@ const DrawerMenu = ({ toggleMenu, links }) => {
           </ListItem>
         ))}
       </List>
+      {currentUser ? null : (
+        <Box display="flex" flexDirection="column" m>
+          {" "}
+          <Button
+            onClick={() => {
+              router.push("/signin");
+              toggleMenu();
+            }}
+            sx={{ mb: 1 }}
+            variant="outlined"
+            startIcon={<Person />}
+          >
+            Sign In
+          </Button>{" "}
+          <Button
+            onClick={() => {
+              router.push("/register");
+              toggleMenu();
+            }}
+            variant="contained"
+            startIcon={<PersonAddAlt />}
+          >
+            Register
+          </Button>
+        </Box>
+      )}
     </>
   );
 };
@@ -172,8 +196,10 @@ const MyAppBar = () => {
   ];
 
   const pages = [
-    { name: t("sign_in"), link: "signin", section: "", icon: Person },
-    { name: t("register"), link: "register", section: "", icon: PersonAddAlt },
+    { name: "Home", link: "/" },
+    { name: "About Us", link: "/about" },
+    { name: "Plans", link: "/#plans" },
+    { name: "Contact Us", link: "/contact" },
   ];
 
   let links;
@@ -208,10 +234,9 @@ const MyAppBar = () => {
               <Link href="/" passHref>
                 <Typography
                   sx={{ height: "100%", alignSelf: "center" }}
-                  color="primary.main"
                   variant="h6"
                 >
-                  {t("app_title")}
+                  {/* {t("app_title")} */}
                 </Typography>
               </Link>
             </Grid>
@@ -250,7 +275,7 @@ const MyAppBar = () => {
               justifyContent="flex-end"
             >
               <IconButton onClick={toggleMenu}>
-                <MenuIcon color="primary" />
+                <MenuIcon />
               </IconButton>
             </Grid>
 

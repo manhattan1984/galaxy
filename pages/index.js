@@ -28,7 +28,16 @@ const OurNumbers = ({ value, title, body }) => {
       <Typography my variant="h5">
         {title}
       </Typography>
-      <Typography variant="body1">{body}</Typography>
+      {body.map((text, index) => (
+        <Typography
+          color="text.secondary"
+          variant="body1"
+          key={index}
+          gutterBottom
+        >
+          {text}
+        </Typography>
+      ))}
       <Divider
         sx={{
           my: 3,
@@ -46,22 +55,28 @@ export default function Home() {
     {
       value: t("o_n_1_t"),
       title: t("o_n_1_s"),
-      body: t("o_n_1_b"),
+      body: [t("o_n_1_b")],
     },
     {
       value: t("o_n_2_t"),
       title: t("o_n_2_s"),
-      body: t("o_n_2_b"),
+      body: [
+        t("o_n_2_b"),
+        t("o_n_2_b_2"),
+        t("o_n_2_b_3"),
+        t("o_n_2_b_4"),
+        t("o_n_2_b_5"),
+      ],
     },
     {
       value: t("o_n_3_t"),
       title: t("o_n_3_s"),
-      body: t("o_n_3_b"),
+      body: [t("o_n_3_b")],
     },
     {
       value: t("o_n_4_t"),
       title: t("o_n_4_s"),
-      body: t("o_n_4_b"),
+      body: [t("o_n_4_b")],
     },
   ];
   return (
@@ -101,7 +116,7 @@ export default function Home() {
             <Typography variant="h3" sx={{ textTransform: "uppercase" }}>
               {t("unlimited")}
             </Typography>
-            <Typography color="GrayText" mb={3} variant="body1">
+            <Typography color="text.secondary" mb={3} variant="body1">
               {t("z_a_body")}
             </Typography>
           </Box>
@@ -114,36 +129,16 @@ export default function Home() {
         ))}
       </Box>
 
-      <InvestmentPlans>
-        <Typography variant="h6">{t("z_a_invest")}</Typography>
-      </InvestmentPlans>
-
-      {/* <Box mx={2} my={2}>
-        <Typography variant="h6" color="GrayText">
-          {t("seen")}
-        </Typography>
-        <Box
-          display="flex"
-          justifyContent="space-around"
-          sx={{ flexWrap: "wrap" }}
-        >
-          <Image src={Reuters} />
-          <Image src={MarketWatch} />
-          <Image src={Bloomberg} />
-          <Image src={TheGuardian} />
-        </Box>
-      </Box> */}
+      <InvestmentPlans id="plans"></InvestmentPlans>
 
       <Box m={2}>
-        <Typography
-          variant="h3"
-          color="primary.main"
-          my={3}
-          pt
-          sx={{ textTransform: "uppercase" }}
-        >
+        <Typography variant="h3" my={3} pt sx={{ textTransform: "uppercase" }}>
           {t("tools")}
         </Typography>
+
+        <video playsInline controls style={{ width: "100%" }}>
+          <source src="/video.mp4" />
+        </video>
 
         <Typography my={3} variant="body1">
           {t("advanced_body")}
