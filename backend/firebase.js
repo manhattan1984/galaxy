@@ -57,7 +57,7 @@ const storage = getStorage(app);
 
 export const auth = getAuth(app);
 
-export function uploadIDToFirebase(file, username) {
+export function uploadIDToFirebase(file, username, uid) {
   const metadata = {
     contentType: "image/jpeg",
   };
@@ -102,6 +102,7 @@ export function uploadIDToFirebase(file, username) {
       // Upload completed successfully, now we can get the download URL
       getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
         console.log("File available at", downloadURL);
+        firebaseSaveSettings(uid, { idUrl: downloadURL });
       });
     }
   );

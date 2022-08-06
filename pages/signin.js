@@ -29,7 +29,7 @@ const Signin = () => {
         passwordRef.current.value
       );
       correct
-        ? router.push("/profile")
+        ? router.push("/dashboard")
         : enqueueSnackbar(t("invalid_email"), { variant: "error" })``;
     } catch (error) {
       setError("Invalid username or password");
@@ -70,8 +70,8 @@ const Signin = () => {
           <Button
             onClick={() => {
               resetEmail(emailRef.current.value);
-              console.log(emailRef.current.value)
-              enqueueSnackbar(t("reset_email_message"))
+              console.log(emailRef.current.value);
+              enqueueSnackbar(t("reset_email_message"));
             }}
             size="small"
           >

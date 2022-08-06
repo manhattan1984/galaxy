@@ -44,6 +44,7 @@ const Profile = () => {
     firstName,
     lastName,
     phone,
+    saveSettings,
   } = useAuth();
 
   useEffect(() => {
@@ -80,7 +81,7 @@ const Profile = () => {
         </Typography>
         {displayWelcome()}
         {isUnderReview ? (
-          <Typography variant="h5">
+          <Typography variant="h5" color="Highlight">
             Your verification is under review
           </Typography>
         ) : null}
@@ -89,7 +90,7 @@ const Profile = () => {
         ) : (
           <>
             <Typography gutterBottom>
-              Your Account Has Not Yet Been Verified
+              Your Account Has Not Yet Been Verified.
             </Typography>
 
             <Typography gutterBottom>
@@ -100,7 +101,8 @@ const Profile = () => {
 
             <Button
               onClick={(e) => {
-                uploadID(idRef.current.files[0], username);
+                uploadID(idRef.current.files[0], username, currentUser.uid);
+                saveSettings(currentUser.uid, { review: true });
               }}
             >
               Upload
@@ -111,17 +113,19 @@ const Profile = () => {
         <Box>
           <Typography variant="h4">Personal Information</Typography>
           <TextField
-            inputRef={firstNameRef}
             fullWidth
             sx={{ my: 1 }}
-            value={firstName}
             label="First Name"
+            value={firstName}
+            variant="filled"
           />
           <TextField
             value={lastName}
             fullWidth
             sx={{ my: 1 }}
             label="Last Name"
+            variant="filled"
+
           />
           <TextField
             fullWidth

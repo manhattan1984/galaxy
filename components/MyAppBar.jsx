@@ -91,6 +91,7 @@ const DrawerMenu = ({ toggleMenu, links }) => {
           <Box>
             <Button
               fullWidth
+              variant="contained"
               onClick={() => {
                 router.push("/stocks");
                 toggleMenu();
@@ -100,6 +101,10 @@ const DrawerMenu = ({ toggleMenu, links }) => {
             </Button>
             <Button
               fullWidth
+              variant="contained"
+              sx={{
+                my: 1,
+              }}
               onClick={() => {
                 router.push("/mining");
                 toggleMenu();

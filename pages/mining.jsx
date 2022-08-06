@@ -16,7 +16,13 @@ const Mining = () => {
         height={400}
       ></CryptoCurrencyMarket>
 
-      <Button fullWidth onClick={() => router.push("/investnow")}>Invest Now</Button>
+      <Button
+        fullWidth
+        variant="contained"
+        onClick={() => router.push("/investnow")}
+      >
+        Invest Now
+      </Button>
     </Container>
   );
 };

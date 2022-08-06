@@ -243,8 +243,8 @@ export function AuthProvider({ children }) {
     } catch (error) {}
   }
 
-  function uploadID(file, username) {
-    uploadIDToFirebase(file, username);
+  function uploadID(file, username, uid) {
+    uploadIDToFirebase(file, username, uid);
   }
 
   useEffect(() => {

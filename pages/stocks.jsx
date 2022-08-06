@@ -13,7 +13,13 @@ const Stocks = () => {
 
       <StockMarket colorTheme="dark" height={400} width="100%"></StockMarket>
 
-      <Button fullWidth onClick={() => router.push("/investnow")}>Invest Now</Button>
+      <Button
+        fullWidth
+        variant="contained"
+        onClick={() => router.push("/investnow")}
+      >
+        Invest Now
+      </Button>
     </Container>
   );
 };
