@@ -328,6 +328,63 @@ const MyAppBar = () => {
                     </Button>
                   </Link>
                 ))}
+                <Box display="flex" m>
+                  {!currentUser ? (
+                    <>
+                      {" "}
+                      <Button
+                        sx={{ mr: 1 }}
+                        onClick={() => {
+                          router.push("/signin");
+                          // toggleMenu();
+                        }}
+                        // sx={{ mb: 1 }}
+                        variant="outlined"
+                        startIcon={<Person />}
+                      >
+                        Sign In
+                      </Button>{" "}
+                      <Button
+                        onClick={() => {
+                          router.push("/register");
+                          // toggleMenu();
+                        }}
+                        variant="contained"
+                        startIcon={<PersonAddAlt />}
+                      >
+                        Register
+                      </Button>{" "}
+                    </>
+                  ) : (
+                    <>
+                      <>
+                        <Box display="flex">
+                          <Button
+                            fullWidth
+                            variant="contained"
+                            onClick={() => {
+                              router.push("/stocks");
+                            }}
+                          >
+                            Stocks
+                          </Button>
+                          <Button
+                            fullWidth
+                            variant="contained"
+                            sx={{
+                              ml: 1,
+                            }}
+                            onClick={() => {
+                              router.push("/mining");
+                            }}
+                          >
+                            Mining
+                          </Button>
+                        </Box>
+                      </>
+                    </>
+                  )}
+                </Box>
               </Grid>
             </Grid>
           </Grid>

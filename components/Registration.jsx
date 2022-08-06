@@ -170,7 +170,7 @@ const Registration = () => {
           />
         </Box>
 
-        <SignUpTextField select variant="standard" label="Country">
+        <SignUpTextField select variant="standard" label="Country" inputRef={countryRef}>
           {Object.values(countryCodesList).map((rawCountry, index) => (
             <MenuItem key={index} value={rawCountry.split(":")[0]}>
               {rawCountry.split(":")[0]}
