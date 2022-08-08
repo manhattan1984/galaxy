@@ -16,87 +16,113 @@ import { useAuth } from "../context/AuthContext";
 
 const InvestmentPlans = ({ children }) => {
   const { t } = useTranslation();
-  const InvestmentItem = ({ title, percent, time, min, max }) => {
-    //   const { addInvestment } = useAuth();
-    const router = useRouter();
-    const { currentUser } = useAuth();
-
-    const handleInvestButton = () => {
-      // addInvestment(title);
-
-      if (!currentUser) {
-        return router.push("/register");
-      }
-      router.push({ pathname: "/investnow/[title]", query: { title } });
-    };
-
+  const InvestmentItem = ({ percent, time, min, max }) => {
     return (
       <Grid item xs={12} md={6} lg={4}>
-        <Card>
-          <CardContent>
-            <Typography variant="h4" color="secondary">
-              {title}
-            </Typography>
-            <Typography variant="h5">{percent}%</Typography>
-            <Typography variant="body1">{time}</Typography>
-            <Typography variant="body2">{t("cap_ret")}</Typography>
-            <Typography variant="body2">{t("247")}</Typography>
-
-            <Box>
-              <Typography variant="body1">
-                {t("min")} {min}
-              </Typography>
-              <Typography variant="body1">
-                {t("max")} {max}
-              </Typography>
+        <Paper>
+          <Box m p>
+            <Box my display="flex" justifyContent="space-between">
+              <Box>
+                <Typography>${min} Minimum</Typography>
+                <Typography>${max} Maximum</Typography>
+              </Box>
+              <Box>
+                <Typography>ROI {percent}% Daily</Typography>
+              </Box>
             </Box>
-          </CardContent>
-          <CardActions>
-            <Button onClick={handleInvestButton} color="secondary">
-              {t("invest_now")}
-            </Button>
-          </CardActions>
-        </Card>
+
+            <Box my={2} display="flex" justifyContent="space-between">
+              <Typography>{time} Days Trade</Typography>
+              <Typography>Active</Typography>
+            </Box>
+          </Box>
+        </Paper>
       </Grid>
     );
   };
 
+  const investments = [
+    {
+      min: 25_000,
+      max: 200_000,
+      percent: 50,
+      time: 60,
+    },
+    {
+      min: 200000,
+      max: "unlimited",
+      percent: 1,
+      time: 90,
+    },
+  ];
+
   return (
     <Container>
-      {children}
-      {/* <Grid container spacing={2} my={1}>
-        {lists.investmentPlans.map(
-          ({ title, percent, time, min, max }, index) => (
-            <InvestmentItem
-              title={title}
-              percent={percent}
-              time={time}
-              min={min}
-              max={max}
-              key={index}
-            />
-          )
-        )}
-      </Grid> */}
-      <Paper>
-        <Box p>
-          <Typography
-            variant="h4"
-            gutterBottom
-            sx={{ textTransform: "uppercase" }}
-          >
-            {t("eligibility")}
-          </Typography>
-          <Typography variant="body1" gutterBottom>
-            {t("e_body")}
-          </Typography>
+      <Typography variant="h4">Investment Plans</Typography>
+      <Grid container spacing={2} my={1}>
+        <Grid item xs={12} md={6} lg={4}>
+          <Paper>
+            <Box m p>
+              <Box my display="flex" justifyContent="space-between">
+                <Box>
+                  <Typography>$ 25,000 Minimum</Typography>
+                  <Typography>$ 200,000 Maximum</Typography>
+                </Box>
+                <Box>
+                  <Typography>ROI 3% Daily</Typography>
+                </Box>
+              </Box>
 
-          <Typography variant="h4" gutterBottom>
-            {t("minimum")}
-          </Typography>
-          <Typography variant="body1">{t("min_value")}</Typography>
-        </Box>
-      </Paper>
+              <Box my={2} display="flex" justifyContent="space-between">
+                <Typography>60 Days Trade</Typography>
+                <Typography>Active</Typography>
+              </Box>
+            </Box>
+          </Paper>
+        </Grid>
+
+        <Grid item xs={12} md={6} lg={4}>
+          <Paper>
+            <Box m p>
+              <Box my display="flex" justifyContent="space-between">
+                <Box>
+                  <Typography>$200,000 Minimum</Typography>
+                  <Typography>Unlimited</Typography>
+                </Box>
+                <Box>
+                  <Typography>ROI 5% Daily</Typography>
+                </Box>
+              </Box>
+
+              <Box my={2} display="flex" justifyContent="space-between">
+                <Typography>90 Days Trade</Typography>
+                <Typography></Typography>
+              </Box>
+            </Box>
+          </Paper>
+        </Grid>
+
+        <Grid item xs={12} md={6} lg={4}>
+          <Paper>
+            <Box m p>
+              <Box my display="flex" justifyContent="space-between">
+                <Box>
+                  <Typography>Peer To Peer</Typography>
+                  <Typography>Minimum $1,000 </Typography>
+                </Box>
+                <Box>
+                  <Typography>ROI 1.25% Daily</Typography>
+                </Box>
+              </Box>
+
+              <Box my={2} display="flex" justifyContent="space-between">
+                <Typography>60 Days Trade</Typography>
+                <Typography>Active</Typography>
+              </Box>
+            </Box>
+          </Paper>
+        </Grid>
+      </Grid>
     </Container>
   );
 };

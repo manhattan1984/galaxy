@@ -25,9 +25,9 @@ const Profile = () => {
   const { t } = useTranslation();
   const idRef = useRef();
 
-  const firstNameRef = useRef();
-  const lastNameRef = useRef();
-  const phoneRef = useRef();
+  const firstNameRef = useRef("");
+  const lastNameRef = useRef("");
+  const phoneRef = useRef("");
 
   const {
     currentUser,
@@ -47,14 +47,7 @@ const Profile = () => {
     saveSettings,
   } = useAuth();
 
-  useEffect(() => {
-    getUsername();
-    getProfileDetails();
-
-    // firstNameRef.current.value = firstName;
-    // lastNameRef.current.value = lastName;
-    // phoneRef.current.value = phone;
-  }, []);
+  useEffect(() => {}, []);
 
   function displayWelcome() {
     try {
@@ -70,7 +63,8 @@ const Profile = () => {
     getBalances();
     getVerified();
 
-    console.log(isVerified, isUnderReview);
+    getUsername();
+    getProfileDetails();
   }, []);
 
   return (
@@ -110,37 +104,17 @@ const Profile = () => {
           </>
         )}
 
-        <Box>
-          <Typography variant="h4">Personal Information</Typography>
-          <TextField
-            fullWidth
-            sx={{ my: 1 }}
-            label="First Name"
-            value={firstName}
-            variant="filled"
-          />
-          <TextField
-            value={lastName}
-            fullWidth
-            sx={{ my: 1 }}
-            label="Last Name"
-            variant="filled"
-
-          />
-          <TextField
-            fullWidth
-            sx={{ my: 1 }}
-            value={currentUser.email}
-            disabled
-            label="Email Address"
-          />
-          <TextField
-            value={"+" + phone}
-            fullWidth
-            sx={{ my: 1 }}
-            label="Phone Number"
-          />
-        </Box>
+        <Paper>
+          <Box p m>
+            <Typography gutterBottom variant="h4">
+              Personal Information
+            </Typography>
+            <Typography gutterBottom>First Name: {firstName}</Typography>
+            <Typography gutterBottom>Last Name: {lastName}</Typography>
+            <Typography gutterBottom>Email: {currentUser.email}</Typography>
+            <Typography gutterBottom>Phone Number: +{phone}</Typography>
+          </Box>
+        </Paper>
       </Container>
     </>
   );

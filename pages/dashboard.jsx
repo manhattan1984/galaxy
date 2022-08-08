@@ -16,6 +16,7 @@ import {
 import React, { useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
 import { useTranslation } from "react-i18next";
+import InvestmentPlans from "../components/InvestmentPlans";
 
 const DashboardItem = ({ icon, title, value, isNumber, bgColor }) => {
   return (
@@ -118,6 +119,8 @@ const Dashboard = () => {
           />
         ))}
       </Grid>
+
+      <InvestmentPlans />
     </Container>
   );
 };

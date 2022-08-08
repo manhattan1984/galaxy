@@ -36,9 +36,9 @@ export function AuthProvider({ children }) {
   const [isUnderReview, setIsUnderReview] = useState();
   const [isVerified, setIsVerified] = useState();
 
-  const [firstName, setFirstName] = useState();
-  const [lastName, setLastName] = useState();
-  const [phone, setPhone] = useState();
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [phone, setPhone] = useState("");
 
   const { enqueueSnackbar } = useSnackbar();
 
@@ -185,6 +185,7 @@ export function AuthProvider({ children }) {
         setFirstName(data.firstname);
         setLastName(data.lastname);
         setPhone(data.countryCode.toString() + data.phoneNumber.toString());
+        console.log(data);
       } else {
         console.log("Doc Not Found");
       }
