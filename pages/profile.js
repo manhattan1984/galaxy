@@ -22,12 +22,9 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useSnackbar } from "notistack";
 
 const Profile = () => {
-  const { t } = useTranslation();
-  const idRef = useRef();
 
-  const firstNameRef = useRef("");
-  const lastNameRef = useRef("");
-  const phoneRef = useRef("");
+  const { t } = useTranslation();
+
 
   const {
     currentUser,
@@ -47,7 +44,33 @@ const Profile = () => {
     saveSettings,
   } = useAuth();
 
-  useEffect(() => {}, []);
+  const firstNameRef = useRef("");
+  const lastNameRef = useRef("");
+  const phoneRef = useRef("");
+  const idRef = useRef();
+
+  const [firstNameValue, setFirstNameValue] = useState("")
+  const [lastNameValue, setLastNameValue] = useState("")
+  const [phoneValue, setPhoneValue] = useState("")
+
+  const { enqueueSnackbar } = useSnackbar()
+
+
+  useEffect(() => {
+    getBalances();
+    getVerified();
+
+    getUsername();
+    getProfileDetails();
+
+    console.log(firstName);
+
+    setFirstNameValue(firstName)
+    setLastNameValue(lastName)
+    setPhoneValue(phone)
+
+  }, [firstName]);
+
 
   function displayWelcome() {
     try {
@@ -56,16 +79,20 @@ const Profile = () => {
           {t("hi_welcome")} {username}
         </Typography>
       );
-    } catch (e) {}
+    } catch (e) { }
   }
 
-  useEffect(() => {
-    getBalances();
-    getVerified();
+  const handleSave = () => {
+    const data = {
+      firstname: firstNameValue,
+      lastname: lastNameValue,
+      phone: phoneValue
+    }
+    saveSettings(currentUser.uid, data)
 
-    getUsername();
-    getProfileDetails();
-  }, []);
+    enqueueSnackbar("Settings Saved", { variant: "success" })
+  }
+
 
   return (
     <>
@@ -109,10 +136,25 @@ const Profile = () => {
             <Typography gutterBottom variant="h4">
               Personal Information
             </Typography>
-            <Typography gutterBottom>First Name: {firstName}</Typography>
-            <Typography gutterBottom>Last Name: {lastName}</Typography>
-            <Typography gutterBottom>Email: {currentUser.email}</Typography>
-            <Typography gutterBottom>Phone Number: +{phone}</Typography>
+            {
+              firstName ?
+                <>
+                  <Typography gutterBottom>Email: {currentUser.email}</Typography>
+                  <TextField sx={{ my: 1 }} fullWidth label="First Name" onChange={(e) => {
+                    setFirstNameValue(e.target.value)
+                  }} value={firstNameValue} />
+
+                  <TextField onChange={(e) => {
+                    setLastNameValue(e.target.value)
+                  }} value={lastNameValue} sx={{ my: 1 }} fullWidth label="Last Name" />
+
+                  <TextField onChange={(e) => {
+                    setPhoneValue(e.target.value)
+                  }} value={phoneValue} sx={{ my: 1 }} fullWidth label="Phone" />
+                </> : null
+            }
+
+            <Button onClick={handleSave}>Save</Button>
           </Box>
         </Paper>
       </Container>
