@@ -34,11 +34,13 @@ export function AuthProvider({ children }) {
   const [investmentHistory, setInvestmentHistory] = useState([]);
   const [withdrawals, setWithdrawals] = useState([]);
   const [isUnderReview, setIsUnderReview] = useState();
-  const [isVerified, setIsVerified] = useState();
+  const [isVerified, setIsVerified] = useState("1/1/1999");
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("");
+  const [country, setCountry] = useState("")
+  const [dob, setDob] = useState("")
 
   const { enqueueSnackbar } = useSnackbar();
 
@@ -67,7 +69,7 @@ export function AuthProvider({ children }) {
       } else {
         console.log("Doc Not Found");
       }
-    } catch (error) {}
+    } catch (error) { }
   }
 
   async function signUp(
@@ -141,7 +143,7 @@ export function AuthProvider({ children }) {
       } else {
         console.log("Doc Not Found");
       }
-    } catch (error) {}
+    } catch (error) { }
   }
 
   async function getAddresses() {
@@ -158,7 +160,7 @@ export function AuthProvider({ children }) {
       } else {
         console.log("Doc Not Found");
       }
-    } catch (error) {}
+    } catch (error) { }
   }
 
   async function getVerified() {
@@ -185,6 +187,8 @@ export function AuthProvider({ children }) {
         setFirstName(data.firstname);
         setLastName(data.lastname);
         setPhone(data.countryCode.toString() + data.phoneNumber.toString());
+        setDob(data.dob)
+        setCountry(data.country)
         console.log(data);
       } else {
         console.log("Doc Not Found");
@@ -241,7 +245,7 @@ export function AuthProvider({ children }) {
   async function addWithdrawal(amount, currency, address) {
     try {
       await addWithdrawalToDatabase(getUid(), amount, currency, address);
-    } catch (error) {}
+    } catch (error) { }
   }
 
   function uploadID(file, username, uid) {
@@ -292,6 +296,8 @@ export function AuthProvider({ children }) {
     firstName,
     lastName,
     phone,
+    dob,
+    country
   };
 
   return (

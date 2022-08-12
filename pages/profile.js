@@ -41,17 +41,18 @@ const Profile = () => {
     firstName,
     lastName,
     phone,
+    dob, country,
     saveSettings,
   } = useAuth();
 
-  const firstNameRef = useRef("");
-  const lastNameRef = useRef("");
-  const phoneRef = useRef("");
+
   const idRef = useRef();
 
   const [firstNameValue, setFirstNameValue] = useState("")
   const [lastNameValue, setLastNameValue] = useState("")
   const [phoneValue, setPhoneValue] = useState("")
+  const [dobValue, setDobValue] = useState("")
+  const [countryValue, setCountryValue] = useState("")
 
   const { enqueueSnackbar } = useSnackbar()
 
@@ -67,6 +68,8 @@ const Profile = () => {
     setFirstNameValue(firstName)
     setLastNameValue(lastName)
     setPhoneValue(phone)
+    setDobValue(dob)
+    setCountryValue(country)
 
   }, [firstName]);
 
@@ -85,7 +88,9 @@ const Profile = () => {
     const data = {
       firstname: firstNameValue,
       lastname: lastNameValue,
-      phone: phoneValue
+      phone: phoneValue,
+      country: countryValue,
+      dob: dobValue
     }
     saveSettings(currentUser.uid, data)
 
@@ -150,6 +155,16 @@ const Profile = () => {
                 <TextField onChange={(e) => {
                   setPhoneValue(e.target.value)
                 }} value={phoneValue} sx={{ my: 1 }} fullWidth label="Phone" />
+
+                <TextField onChange={(e) => {
+                  setCountryValue(e.target.value)
+                }} value={countryValue} sx={{ my: 1 }} fullWidth label="Country" />
+
+
+                <TextField type="date" onChange={(e) => {
+                  setDobValue(e.target.value)
+                }} value={dobValue} sx={{ my: 1 }} fullWidth label="Date Of Birth" />
+
               </>
               : null}
 
