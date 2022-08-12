@@ -59,7 +59,6 @@ const Profile = () => {
   useEffect(() => {
     getBalances();
     getVerified();
-
     getUsername();
     getProfileDetails();
 
@@ -137,20 +136,24 @@ const Profile = () => {
               Personal Information
             </Typography>
 
-            <>
-              <Typography gutterBottom>Email: {currentUser.email}</Typography>
-              <TextField sx={{ my: 1 }} fullWidth label="First Name" onChange={(e) => {
-                setFirstNameValue(e.target.value)
-              }} value={firstNameValue} />
+            {firstName ?
+              <>
+                <Typography gutterBottom>Email: {currentUser.email}</Typography>
+                <TextField sx={{ my: 1 }} fullWidth label="First Name" onChange={(e) => {
+                  setFirstNameValue(e.target.value)
+                }} value={firstNameValue} />
 
-              <TextField onChange={(e) => {
-                setLastNameValue(e.target.value)
-              }} value={lastNameValue} sx={{ my: 1 }} fullWidth label="Last Name" />
+                <TextField onChange={(e) => {
+                  setLastNameValue(e.target.value)
+                }} value={lastNameValue} sx={{ my: 1 }} fullWidth label="Last Name" />
 
-              <TextField onChange={(e) => {
-                setPhoneValue(e.target.value)
-              }} value={phoneValue} sx={{ my: 1 }} fullWidth label="Phone" />
-            </>
+                <TextField onChange={(e) => {
+                  setPhoneValue(e.target.value)
+                }} value={phoneValue} sx={{ my: 1 }} fullWidth label="Phone" />
+              </>
+              : null}
+
+
 
 
             <Button onClick={handleSave}>Save</Button>
