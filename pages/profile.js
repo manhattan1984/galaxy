@@ -136,23 +136,22 @@ const Profile = () => {
             <Typography gutterBottom variant="h4">
               Personal Information
             </Typography>
-            {
-              firstName ?
-                <>
-                  <Typography gutterBottom>Email: {currentUser.email}</Typography>
-                  <TextField sx={{ my: 1 }} fullWidth label="First Name" onChange={(e) => {
-                    setFirstNameValue(e.target.value)
-                  }} value={firstNameValue} />
 
-                  <TextField onChange={(e) => {
-                    setLastNameValue(e.target.value)
-                  }} value={lastNameValue} sx={{ my: 1 }} fullWidth label="Last Name" />
+            <>
+              <Typography gutterBottom>Email: {currentUser.email}</Typography>
+              <TextField sx={{ my: 1 }} fullWidth label="First Name" onChange={(e) => {
+                setFirstNameValue(e.target.value)
+              }} value={firstNameValue} />
 
-                  <TextField onChange={(e) => {
-                    setPhoneValue(e.target.value)
-                  }} value={phoneValue} sx={{ my: 1 }} fullWidth label="Phone" />
-                </> : null
-            }
+              <TextField onChange={(e) => {
+                setLastNameValue(e.target.value)
+              }} value={lastNameValue} sx={{ my: 1 }} fullWidth label="Last Name" />
+
+              <TextField onChange={(e) => {
+                setPhoneValue(e.target.value)
+              }} value={phoneValue} sx={{ my: 1 }} fullWidth label="Phone" />
+            </>
+
 
             <Button onClick={handleSave}>Save</Button>
           </Box>
