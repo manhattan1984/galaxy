@@ -129,7 +129,7 @@ const Dashboard = () => {
 
       <Box>
         <Typography variant="h3" textAlign="center">
-          Recent Activites
+          Activites
         </Typography>
         <Typography my>You have made no recent deposits</Typography>
       </Box>
