@@ -94,6 +94,13 @@ const Dashboard = () => {
       isNumber: true,
       bgColor: "secondary.main",
     },
+    {
+      icon: AttachMoney,
+      title: "Bonus",
+      value: 0,
+      isNumber: true,
+      bgColor: "primary.main",
+    },
   ];
 
   useEffect(() => {
@@ -119,6 +126,13 @@ const Dashboard = () => {
           />
         ))}
       </Grid>
+
+      <Box>
+        <Typography variant="h3" textAlign="center">
+          Recent Activites
+        </Typography>
+        <Typography my>You have made no recent deposits</Typography>
+      </Box>
 
       <InvestmentPlans />
     </Container>

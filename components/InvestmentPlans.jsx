@@ -33,7 +33,7 @@ const InvestmentPlans = ({ children }) => {
 
             <Box my={2} display="flex" justifyContent="space-between">
               <Typography>{time} Days Trade</Typography>
-              <Typography>Active</Typography>
+              {/* <Typography>Active</Typography> */}
             </Box>
           </Box>
         </Paper>
@@ -75,7 +75,7 @@ const InvestmentPlans = ({ children }) => {
 
               <Box my={2} display="flex" justifyContent="space-between">
                 <Typography>60 Days Trade</Typography>
-                <Typography>Active</Typography>
+                {/* <Typography>Active</Typography> */}
               </Box>
             </Box>
           </Paper>
@@ -117,7 +117,7 @@ const InvestmentPlans = ({ children }) => {
 
               <Box my={2} display="flex" justifyContent="space-between">
                 <Typography>60 Days Trade</Typography>
-                <Typography>Active</Typography>
+                {/* <Typography>Active</Typography> */}
               </Box>
             </Box>
           </Paper>
