@@ -23,6 +23,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import SettingsIcon from "@mui/icons-material/Settings";
+import HistoryIcon from "@mui/icons-material/History";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 // import Menu, { LINKS } from "./Menu";
@@ -219,6 +220,7 @@ const MyAppBar = () => {
     //   section: "Others",
     //   icon: SettingsIcon,
     // },
+    { name: "Activities", link: "/activities", icon: HistoryIcon },
     {
       name: t("log_out"),
       link: "/",

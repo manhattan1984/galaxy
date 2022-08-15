@@ -32,6 +32,8 @@ export function AuthProvider({ children }) {
   const [totalEarned, setTotalEarned] = useState(0);
   const [totalDeposit, setTotalDeposit] = useState(0);
   const [investmentHistory, setInvestmentHistory] = useState([]);
+  const [activities, setActivities] = useState([])
+  const [bonus, setBonus] = useState()
   const [withdrawals, setWithdrawals] = useState([]);
   const [isUnderReview, setIsUnderReview] = useState();
   const [isVerified, setIsVerified] = useState("1/1/1999");
@@ -130,6 +132,21 @@ export function AuthProvider({ children }) {
     }
   }
 
+  async function getActivities() {
+    try {
+      const docSnap = await getUserDetails(getUid())
+
+      if (docSnap.exists()) {
+        const data = getData(docSnap)
+        setActivities(data.activities)
+      } else {
+        console.log("Doc Not Found")
+      }
+    } catch (error) {
+
+    }
+  }
+
   async function getBalances() {
     try {
       const docSnap = await getUserDetails(getUid());
@@ -140,6 +157,7 @@ export function AuthProvider({ children }) {
         setActiveInvestment(data.activeInvestment);
         setTotalDeposit(data.totalDeposit);
         setTotalEarned(data.totalEarned);
+        setBonus(data.bonus)
       } else {
         console.log("Doc Not Found");
       }
@@ -297,7 +315,10 @@ export function AuthProvider({ children }) {
     lastName,
     phone,
     dob,
-    country
+    country,
+    bonus,
+    activities,
+    getActivities
   };
 
   return (

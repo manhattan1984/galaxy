@@ -61,6 +61,7 @@ const Dashboard = () => {
     activeInvestment,
     totalEarned,
     totalDeposit,
+    bonus
   } = useAuth();
 
   const { t } = useTranslation();
@@ -97,7 +98,7 @@ const Dashboard = () => {
     {
       icon: AttachMoney,
       title: "Bonus",
-      value: 0,
+      value: bonus,
       isNumber: true,
       bgColor: "primary.main",
     },
@@ -127,12 +128,12 @@ const Dashboard = () => {
         ))}
       </Grid>
 
-      <Box>
+      {/* <Box>
         <Typography variant="h3" textAlign="center">
-          Activites
+           Activites
         </Typography>
         <Typography my>You have made no recent deposits</Typography>
-      </Box>
+      </Box> */}
 
       <InvestmentPlans />
     </Container>
