@@ -13,8 +13,10 @@ const Activities = () => {
       <Typography my variant="h4">
         Activities
       </Typography>
-      {activities.map((activity) => (
-        <Typography my>{activity}</Typography>
+      {activities.map((activity, index) => (
+        <Typography key={index} my>
+          {activity}
+        </Typography>
       ))}
     </Container>
   );
