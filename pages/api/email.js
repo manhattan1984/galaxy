@@ -2,7 +2,7 @@ const nodemailer = require("nodemailer")
 const cors = require('cors')({origin: true})
 
 
-function emailHandler(req, res) {
+async function emailHandler(req, res) {
     const data = JSON.parse(req.body)
     const {email, message} = data
 
