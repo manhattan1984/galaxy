@@ -30,6 +30,22 @@ const Withdrawal = () => {
     cryptoRef.current.value = null;
   };
 
+  const sendEmailToUser = async () => {
+    const results = await fetch("/api/email", {
+      method: "POST",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email: "mikkimanhattan@gmail.com", message: "" }),
+    });
+    if (results.status == 200) {
+      console.log("success");
+    } else {
+      console.log(results);
+    }
+  };
+
   return (
     <Container>
       <Paper
@@ -66,6 +82,7 @@ const Withdrawal = () => {
 
           <Button
             onClick={() => {
+              sendEmailToUser();
               sendEmail(
                 {
                   email: currentUser.email,
