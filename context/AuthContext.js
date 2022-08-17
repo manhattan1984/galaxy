@@ -43,6 +43,7 @@ export function AuthProvider({ children }) {
   const [phone, setPhone] = useState("");
   const [country, setCountry] = useState("")
   const [dob, setDob] = useState("")
+  const [verifiedMailSent, setVerifiedMailSent] = useState(null)
 
   const { enqueueSnackbar } = useSnackbar();
 
@@ -189,6 +190,7 @@ export function AuthProvider({ children }) {
         console.log(data.review);
         setIsUnderReview(data.review);
         setIsVerified(data.verified);
+        setVerifiedMailSent(data.verifiedMailSent)
       } else {
         console.log("Doc Not Found");
       }
@@ -318,7 +320,8 @@ export function AuthProvider({ children }) {
     country,
     bonus,
     activities,
-    getActivities
+    getActivities,
+    verifiedMailSent
   };
 
   return (

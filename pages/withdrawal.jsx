@@ -13,11 +13,34 @@ import React, { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { sendEmail } from "../backend/herotofu";
 import { useAuth } from "../context/AuthContext";
+import postmark from "postmark";
 
 const currencies = ["Bitcoin", "Ethereum", "Bitcoin Cash"];
 
 const WITHDRAW_FORM_ENDPOINT =
   "https://public.herotofu.com/v1/8aad0cf0-137d-11ed-bc91-695741f28ee9";
+//
+
+// const client = new SMTPClient({
+//   user: "info@galaxydholdings.com",
+//   password: "Forever2021",
+//   host: "galaxydholdings.com",
+// });
+
+// client.send(
+//   {
+//     text: "i hope this works",
+//     from: "Galaxy Holdings <info@galaxydholdings.com>",
+//     to: "Me <mikkimanhattan@gmail.com>",
+//     subject: "testing emailjs",
+//   },
+//   (err, message) => {
+//     console.log(err || message);
+//   }
+// );
+
+//
+
 const Withdrawal = () => {
   const { t } = useTranslation();
   const amountRef = useRef();
@@ -31,18 +54,19 @@ const Withdrawal = () => {
   };
 
   const sendEmailToUser = async () => {
+    const data = {
+      email: currentUser.email,
+      subject: "Withdrawal",
+      message: `<b>Your withdrawal request of $${amountRef.current.value} was successfully sent, kindly wait while we process your transaction.</b>`,
+    };
     const results = await fetch("/api/email", {
       method: "POST",
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email: "mikkimanhattan@gmail.com", message: "" }),
+      body: JSON.stringify(data),
     });
     if (results.status == 200) {
       console.log("success");
     } else {
-      console.log(results);
+      console.log("error");
     }
   };
 

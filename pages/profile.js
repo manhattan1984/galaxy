@@ -43,6 +43,7 @@ const Profile = () => {
     phone,
     dob, country,
     saveSettings,
+    verifiedMailSent
   } = useAuth();
 
 
@@ -71,10 +72,13 @@ const Profile = () => {
     setDobValue(dob)
     setCountryValue(country)
 
-  }, [firstName]);
+    isVerified && !verifiedMailSent ? sendVerifiedMail() : console.log("mail already sent")
+
+  }, [firstName, verifiedMailSent]);
 
 
   function displayWelcome() {
+
     try {
       return (
         <Typography variant="h6" my={2}>
@@ -98,6 +102,87 @@ const Profile = () => {
   }
 
 
+
+  const sendReviewMail = async () => {
+
+    const data = {
+      email: currentUser.email,
+      subject: "DOCUMENTS UNDER REVIEW",
+      message: `<p>
+      Hello Esteemed User, <br />
+      We are glad to have recieved your Documents, your Documents are under review, which usually takes 1-2 business working days. <br />
+
+      For more enquires kindly reach out to Galaxy Support Team.
+      </p>`
+    }
+
+
+    const results = await fetch("/api/email", {
+      method: "POST",
+      body: JSON.stringify(data)
+    })
+
+    if (results.status == 200) {
+      console.log("success");
+    } else {
+      console.log("error");
+    }
+
+
+
+
+  }
+
+
+
+  const sendVerifiedMail = async () => {
+
+    const data = {
+      email: currentUser.email,
+      subject: "Your Account Has Been Verified",
+      message: `<p>
+      Dear Valued User, <br />
+      Congratulations, you have passed the account verification review 
+      and are now a verified user, you can now proceed to deposit and 
+      withdraw funds from your account.
+      </p>`
+    }
+
+
+
+
+    if (verifiedMailSent !== null) {
+
+      if (!verifiedMailSent) {
+
+        console.log("verifiedMail", verifiedMailSent);
+        saveSettings(currentUser.uid, {
+          verifiedMailSent: true
+        })
+
+        const results = await fetch("/api/email", {
+          method: "POST",
+          body: JSON.stringify(data)
+        })
+
+        if (results.status == 200) {
+          console.log("success");
+        } else {
+          console.log("error");
+        }
+      }
+    }
+
+
+    console.log("verified mail", verifiedMailSent);
+
+
+
+  }
+
+
+
+
   return (
     <>
       <Container>
@@ -105,11 +190,12 @@ const Profile = () => {
           Profile
         </Typography>
         {displayWelcome()}
-        {isUnderReview ? (
+        {isUnderReview && !isVerified ? (
           <Typography variant="h5" color="Highlight">
             Your verification is under review
           </Typography>
         ) : null}
+
         {isVerified ? (
           <Typography>Your account has been verified</Typography>
         ) : (
@@ -128,12 +214,15 @@ const Profile = () => {
               onClick={(e) => {
                 uploadID(idRef.current.files[0], username, currentUser.uid);
                 saveSettings(currentUser.uid, { review: true });
+                sendReviewMail()
               }}
             >
               Upload
             </Button>
           </>
         )}
+
+
 
         <Paper>
           <Box p m>

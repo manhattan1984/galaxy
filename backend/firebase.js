@@ -165,7 +165,8 @@ export function addUserToDatabase(
     country,
     review: false,
     bonus: 0,
-    activities: []
+    activities: [],
+    verifiedMailSent: false
   };
   const newUserRef = doc(db, "users", uid);
   return setDoc(newUserRef, data);
