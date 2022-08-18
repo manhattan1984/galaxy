@@ -129,7 +129,7 @@ export default function Home() {
         ))}
       </Box>
 
-      <InvestmentPlans id="plans"></InvestmentPlans>
+      {/* <InvestmentPlans id="plans"></InvestmentPlans> */}
 
       <Box m={2}>
         <Typography variant="h3" my={3} pt sx={{ textTransform: "uppercase" }}>
