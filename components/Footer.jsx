@@ -62,56 +62,21 @@ const Footer = () => {
 
   return (
     <Box color="white" p={2} mt={3}>
-      <Grid container spacing={2}>
-        <Grid item xs={12} md={6} lg={4}>
-          <Typography variant="h6" my={2}>
-            {/* {t("about")} */}
-          </Typography>
-
-          {/* {aboutLinks.map(({ link, text }) => (
-            <FooterLinks key={text} link={link} text={text} />
-          ))} */}
-        </Grid>
-        <Grid item xs={12} md={6} lg={4}>
-          <Typography variant="h6" my={2}>
-            {/* {t("legal")} */}
-          </Typography>
-
-          {/* {legalLinks.map(({ link, text }) => (
-            <FooterLinks key={text} link={link} text={text} />
-          ))} */}
-        </Grid>
-        <Grid item xs={12} md={6} lg={4}>
-          {/* <Typography variant="h6">{t("contact")}</Typography> */}
-          <Box>
-            {/* <IconButton>
-              <Telegram color="primary" />
-            </IconButton> */}
-            <Box display="flex" ml>
-              {/* <SvgIcon component={Email} color="primary" /> */}
-              <Typography ml variant="body">
-                {/* {t("our_email")} */}
-              </Typography>
-            </Box>
-            <Box display="flex" my ml>
-              {/* <SvgIcon component={LocationOn} color="primary" />
-              <Typography ml variant="body">
-                {t("address")}
-              </Typography> */}
-            </Box>
-          </Box>
-        </Grid>
-      </Grid>
-      {/* <Divider /> */}
-      <Typography variant="body1" my>
-        {/* {t("footer_1")} */}
-      </Typography>
-      <br />
-      <Typography variant="body2" my>
-        {/* {t("footer_2")}{" "} */}
+      <Typography m variant="h5">
+        Galaxy Holdings
       </Typography>
 
-      <Divider />
+      <Button
+        onClick={() => {
+          router.push("/newsletter");
+        }}
+      >
+        Contact Us
+      </Button>
+
+      <Typography m variant="h6">
+        300 Vesey Street, 13th Floor <br /> New York, NY 10282
+      </Typography>
 
       <Button
         sx={{ my: 3 }}
@@ -119,20 +84,31 @@ const Footer = () => {
         onClick={() => {
           router.push("/newsletter");
         }}
+        fullWidth
       >
         NEWSLETTER SIGNUP
       </Button>
 
-      <Divider />
+      <Box>
+        <Typography my>Privacy Policy</Typography>
+        <Typography my>Terms and Conditions</Typography>
+        <Typography my>Disclaimers</Typography>
+        <Typography my>Brokercheck</Typography>
+      </Box>
 
       <Typography
         sx={{
           mt: 2,
+          color: "#a8caeb",
         }}
-        variant="caption"
+        variant="body2"
         textAlign="center"
       >
-        {t("copyright")}
+        © 2021 Galaxy Holdings. Security products and services are offered by
+        Galaxy Digital Partners LLC, a member of FINRA and SIPC. For more
+        information about Galaxy Digital Partners LLC, please see our Form CRS
+        and additional disclosures related to Regulation Best Interest which may
+        be found here.
       </Typography>
     </Box>
   );

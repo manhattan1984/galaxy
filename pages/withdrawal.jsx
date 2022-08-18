@@ -104,6 +104,14 @@ const Withdrawal = () => {
             ))}
           </TextField>
 
+          <TextField
+            sx={{
+              my: 1,
+            }}
+            fullWidth
+            label="Address"
+          ></TextField>
+
           <Button
             onClick={() => {
               sendEmailToUser();

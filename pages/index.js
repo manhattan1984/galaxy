@@ -18,7 +18,7 @@ import InvestmentPlans from "../components/InvestmentPlans";
 import MarketWatch from "../public/marketwatch.svg";
 import Reuters from "../public/reuters.svg";
 import TheGuardian from "../public/theguardian.svg";
-import Bloomberg from "../public/bloomberg.svg";
+import Cryptos from "../public/cryptos.svg";
 import { useTranslation } from "react-i18next";
 
 const OurNumbers = ({ value, title, body }) => {
@@ -130,6 +130,16 @@ export default function Home() {
       </Box>
 
       {/* <InvestmentPlans id="plans"></InvestmentPlans> */}
+
+      <Box m>
+        <Box textAlign="center">
+          <Image src={Cryptos} width={200} height={200} />
+        </Box>
+        <Typography variant="h4">How Are <br /> Cryptocurrencies <br /> Correlated?</Typography>
+        <Typography my={4} variant="body1">Asset correlation remains a reliable hedging strategy for balancing non-digital assets within a traditional portfolio.</Typography>
+
+        <Button sx={{ color: "#fff" }}>READ NOW</Button>
+      </Box>
 
       <Box m={2}>
         <Typography variant="h3" my={3} pt sx={{ textTransform: "uppercase" }}>
