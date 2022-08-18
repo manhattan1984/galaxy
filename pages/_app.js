@@ -37,7 +37,7 @@ function MyApp({ Component, pageProps }) {
         <AuthProvider>
           <MyAppBar />
           <Component {...pageProps} />
-          <Footer />
+          {/* <Footer /> */}
         </AuthProvider>
       </SnackbarProvider>
     </ThemeProvider>

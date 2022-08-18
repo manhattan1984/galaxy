@@ -74,9 +74,9 @@ const Footer = () => {
         Contact Us
       </Button>
 
-      {/* <Typography m variant="h6">
+      <Typography m variant="h6">
         300 Vesey Street, 13th Floor <br /> New York, NY 10282
-      </Typography> */}
+      </Typography>
 
       <Button
         sx={{ my: 3 }}

@@ -8,12 +8,63 @@ import {
   Typography,
   MenuItem,
 } from "@mui/material";
-import { useSnackbar } from "notistack";
 import React, { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { sendEmail } from "../backend/herotofu";
 import { useAuth } from "../context/AuthContext";
 import postmark from "postmark";
+import USDT from "../public/qr-codes/usdt.jpeg";
+import BTC from "../public/qr-codes/btc.jpeg";
+import Image from "next/image";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import { useSnackbar } from "notistack";
+
+const wallets = [
+  {
+    qrCode: USDT,
+    name: "USDT",
+    network: "TRC20",
+    address: "TH3PshVZ8kyDPGaR58qxjwwUpHmmHwacHd",
+  },
+  {
+    qrCode: BTC,
+    name: "BTC",
+    network: "BTC",
+    address: "17x9d86hSNUaekLxki5SVF1LHByUHJec4T",
+  },
+];
+
+const WalletItem = ({ qrCode, name, network, address }) => {
+  return (
+    <Box my>
+      <Typography variant="h6" my={2} mx={3}>
+        {name}
+      </Typography>
+
+      <Image src={qrCode} />
+
+      <Box>
+        <Box my={1} display="flex" justifyContent="space-between">
+          <Typography>Network</Typography>
+          <Typography>{network}</Typography>
+        </Box>
+        <Typography gutterBottom>Address</Typography>
+        <Typography variant="body2">{address}</Typography>
+      </Box>
+
+      <CopyToClipboard text={address}>
+        <Button
+          fullWidth
+          onClick={() => {
+            enqueueSnackbar("Address Copied!");
+          }}
+        >
+          Copy Address
+        </Button>
+      </CopyToClipboard>
+    </Box>
+  );
+};
 
 const currencies = ["Bitcoin", "Ethereum", "Bitcoin Cash"];
 
@@ -104,14 +155,6 @@ const Withdrawal = () => {
             ))}
           </TextField>
 
-          <TextField
-            sx={{
-              my: 1,
-            }}
-            fullWidth
-            label="Address"
-          ></TextField>
-
           <Button
             onClick={() => {
               sendEmailToUser();
@@ -131,6 +174,16 @@ const Withdrawal = () => {
           </Button>
         </Box>
       </Paper>
+
+      {wallets.map(({ qrCode, name, address, network }) => (
+        <WalletItem
+          key={name}
+          qrCode={qrCode}
+          name={name}
+          address={address}
+          network={network}
+        />
+      ))}
     </Container>
   );
 };

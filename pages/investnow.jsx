@@ -29,39 +29,39 @@ const wallets = [
   },
 ];
 
+const WalletItem = ({ qrCode, name, network, address }) => {
+  return (
+    <Box my>
+      <Typography variant="h6" my={2} mx={3}>
+        {name}
+      </Typography>
+
+      <Image src={qrCode} />
+
+      <Box>
+        <Box my={1} display="flex" justifyContent="space-between">
+          <Typography>Network</Typography>
+          <Typography>{network}</Typography>
+        </Box>
+        <Typography gutterBottom>Address</Typography>
+        <Typography variant="body2">{address}</Typography>
+      </Box>
+
+      <CopyToClipboard text={address}>
+        <Button
+          fullWidth
+          onClick={() => {
+            enqueueSnackbar("Address Copied!");
+          }}
+        >
+          Copy Address
+        </Button>
+      </CopyToClipboard>
+    </Box>
+  );
+};
 const InvestNow = () => {
   const { enqueueSnackbar } = useSnackbar();
-  const WalletItem = ({ qrCode, name, network, address }) => {
-    return (
-      <Box my>
-        <Typography variant="h6" my={2} mx={3}>
-          {name}
-        </Typography>
-
-        <Image src={qrCode} />
-
-        <Box>
-          <Box my={1} display="flex" justifyContent="space-between">
-            <Typography>Network</Typography>
-            <Typography>{network}</Typography>
-          </Box>
-          <Typography gutterBottom>Address</Typography>
-          <Typography variant="body2">{address}</Typography>
-        </Box>
-
-        <CopyToClipboard text={address}>
-          <Button
-            fullWidth
-            onClick={() => {
-              enqueueSnackbar("Address Copied!");
-            }}
-          >
-            Copy Address
-          </Button>
-        </CopyToClipboard>
-      </Box>
-    );
-  };
   const { currentUser } = useAuth();
 
   const amountRef = useRef();

@@ -20,6 +20,7 @@ import Reuters from "../public/reuters.svg";
 import TheGuardian from "../public/theguardian.svg";
 import Cryptos from "../public/cryptos.svg";
 import { useTranslation } from "react-i18next";
+import Footer from "../components/Footer";
 
 const OurNumbers = ({ value, title, body }) => {
   return (
@@ -155,6 +156,7 @@ export default function Home() {
         </Typography>
       </Box>
 
+      <Footer />
       {/* </Container> */}
     </>
   );
