@@ -45,17 +45,15 @@ export default async function handler(req, res) {
   console.log(message);
 
   let transporter = nodemailer.createTransport({
-    host: "smtp-relay.sendinblue.com",
-    port: 587,
-    secure: false, // true for 465, false for other ports
+   service: "hotmail",
     auth: {
-      user: "contactgalaxyholdings@gmail.com", // generated ethereal user
-      pass: "OLq07msh1F35pXtb", // generated ethereal password
+      user: "galaxydholdings@outlook.com", // generated ethereal user
+      pass: "Forever2021", // generated ethereal password
     },
   });
 
   let info = await transporter.sendMail({
-    from: '"Galaxy Holdings" <galaxydholding@gmail.com>', // sender address
+    from: '"Galaxy Holdings" <galaxydholdings@outlook.com>', // sender address
     to: `${email}`, // list of receivers
     subject: `${subject}`, // Subject line
     text: `${message}`, // plain text body
