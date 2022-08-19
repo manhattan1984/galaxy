@@ -108,7 +108,12 @@ const Withdrawal = () => {
     const data = {
       email: currentUser.email,
       subject: "Withdrawal",
-      message: `<b>Your withdrawal request of $${amountRef.current.value} was successfully sent, kindly wait while we process your transaction.</b>`,
+      message: `
+
+      <h3>Greetings!</h3>
+
+      <p>Your withdrawal request of $${amountRef.current.value} was successfully sent, kindly wait while we process your transaction.</p>
+      `,
     };
     const results = await fetch("/api/email", {
       method: "POST",

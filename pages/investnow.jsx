@@ -70,8 +70,13 @@ const InvestNow = () => {
   const sendDepositEmail = async () => {
     const data = {
       email: currentUser.email,
-      subject: `Pending Deposit`,
-      message: `<p>Deposit Successful <br />
+      subject: `Deposit Confirmed`,
+      message: `
+      
+      <p>Deposit Successful 
+
+      <br />
+      <br />
       Your deposit of  
       ${amountRef.current.value} ${cryptoRef.current.value} is now available in your GALAXY account. Log in to check your balance.
       Read our FAQs if you are running problems. <br />

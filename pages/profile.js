@@ -114,7 +114,7 @@ const Profile = () => {
 
       <br />
 
-      <p>
+      <p style="font-family: 'Courier New', monospace;">
       Hello Esteemed User, 
       <br /> 
       <br />
@@ -122,7 +122,10 @@ const Profile = () => {
       <br /> 
       <br />
 
-      For more enquires kindly reach out to Galaxy Support Team.
+      </p>
+
+      <p>
+        For more enquires kindly reach out to Galaxy Support Team.
       </p>`
     }
 
@@ -149,9 +152,11 @@ const Profile = () => {
 
     const data = {
       email: currentUser.email,
-      subject: "Your Account Has Been Verified",
+      subject: "Account verification Successful",
       message: `<p>
-      Dear Valued User, <br />
+      Dear Valued User, 
+      <br />
+      <br />
       Congratulations, you have passed the account verification review 
       and are now a verified user, you can now proceed to deposit and 
       withdraw funds from your account.
