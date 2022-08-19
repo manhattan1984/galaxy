@@ -108,9 +108,19 @@ const Profile = () => {
     const data = {
       email: currentUser.email,
       subject: "DOCUMENTS UNDER REVIEW",
-      message: `<p>
-      Hello Esteemed User, <br />
-      We are glad to have recieved your Documents, your Documents are under review, which usually takes 1-2 business working days. <br />
+      message: `
+      
+      <h3 style="text-align: center;">DOCUMENTS UNDER REVIEW</h3>
+
+      <br />
+
+      <p>
+      Hello Esteemed User, 
+      <br /> 
+      <br />
+      We are glad to have recieved your Documents, your Documents are under review, which usually takes 1-2 business working days. 
+      <br /> 
+      <br />
 
       For more enquires kindly reach out to Galaxy Support Team.
       </p>`

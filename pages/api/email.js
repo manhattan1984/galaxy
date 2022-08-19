@@ -64,6 +64,10 @@ export default async function handler(req, res) {
                 <body>
                     <img src="https://firebasestorage.googleapis.com/v0/b/galaxydholdings.appspot.com/o/6285240B-4269-4374-AD92-6A57AC860285.jpeg?alt=media&token=8c8cca43-bec7-4526-8a36-9bdbbbfcb3d3">
                     ${message}
+                    <footer>
+                      <p style="text-align: center;">Galaxy Holdings</p>
+                      <p style="text-align: center;">All Rights Reserved Ⓒ 2022</p>
+                    </footer>
                 </body>
              </html>
              `, // html body

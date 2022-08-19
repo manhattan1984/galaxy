@@ -5,6 +5,7 @@ import {
   Button,
   Grid,
   Divider,
+  Paper,
 } from "@mui/material";
 import Head from "next/head";
 import Image from "next/image";
@@ -132,6 +133,7 @@ export default function Home() {
 
       {/* <InvestmentPlans id="plans"></InvestmentPlans> */}
 
+
       <Box m>
         <Box textAlign="center">
           <Image src={Cryptos} width={200} height={200} />
@@ -141,6 +143,26 @@ export default function Home() {
 
         <Button sx={{ color: "#fff" }}>READ NOW</Button>
       </Box>
+
+      <Divider />
+      <Paper sx={{ mx: 1, p: 1, my: 2 }}>
+        <Box m>
+          <Typography my variant="h5">ELIGIBILITY REQUIREMENTS</Typography>
+
+          <Typography>
+            Accredited Investor - You are accredited as an individual if you made over $200,000 in the last two calendar years (or $300,000 with your spouse),
+            or if you have greater than $1,000,000 in liquid net worth, excluding your primary residence.
+          </Typography>
+
+          <Typography my>
+            MINIMUM INVESTMENTS
+          </Typography>
+          <Typography>
+            $25,000
+          </Typography>
+        </Box>
+      </Paper>
+      <Divider />
 
       <Box m={2}>
         <Typography variant="h3" my={3} pt sx={{ textTransform: "uppercase" }}>
