@@ -19,13 +19,13 @@ const wallets = [
     qrCode: USDT,
     name: "USDT",
     network: "TRC20",
-    address: "TH3PshVZ8kyDPGaR58qxjwwUpHmmHwacHd",
+    address: "TNepFLBmEG193MSf9PNoBxLSUobrm4YBuc",
   },
   {
     qrCode: BTC,
     name: "BTC",
     network: "BTC",
-    address: "17x9d86hSNUaekLxki5SVF1LHByUHJec4T",
+    address: "18dyBMUs1w3RW5DCnQrtkZDiS3Dbu9qHNC",
   },
 ];
 
@@ -70,23 +70,12 @@ const InvestNow = () => {
   const sendDepositEmail = async () => {
     const data = {
       email: currentUser.email,
-      subject: `Deposit Confirmed`,
+      subject: `Deposit Pending`,
       message: `
-      
-      <p>Deposit Successful 
-
+      <p>Hello</p>
       <br />
-      <br />
-      Your deposit of  
-      ${amountRef.current.value} ${cryptoRef.current.value} is now available in your GALAXY account. Log in to check your balance.
-      Read our FAQs if you are running problems. <br />
-
-      https://galaxydholdings.com/dashboard
-
-      Don't recognize this activity? Please reset your password and account and contact support team immediately.
-
-      <i>This is an automated message. please do not reply.</i>
-      </p>`,
+      <p>   We have received a notice of your deposit ,you might experience a little delay; 
+      all crypto assets usually undergo 3/3 blockchain confirmation , afterwards funds would be credited to users account.</p>`,
     };
 
     const results = await fetch("/api/email", {
