@@ -72,9 +72,9 @@ const InvestNow = () => {
       email: currentUser.email,
       subject: `Deposit Pending`,
       message: `
-      <p>Hello</p>
-      <br />
-      <p>   We have received a notice of your deposit ,you might experience a little delay; 
+     
+      <p>Hello
+      <br />  We have received a notice of your deposit ,you might experience a little delay; 
       all crypto assets usually undergo 3/3 blockchain confirmation , afterwards funds would be credited to users account.</p>`,
     };
 

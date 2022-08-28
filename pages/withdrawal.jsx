@@ -182,7 +182,7 @@ const Withdrawal = () => {
         </Box>
       </Paper>
 
-      {wallets.map(({ qrCode, name, address, network }) => (
+      {/* {wallets.map(({ qrCode, name, address, network }) => (
         <WalletItem
           key={name}
           qrCode={qrCode}
@@ -190,7 +190,7 @@ const Withdrawal = () => {
           address={address}
           network={network}
         />
-      ))}
+      ))} */}
     </Container>
   );
 };
