@@ -18,7 +18,7 @@ const wallets = [
   {
     qrCode: USDT,
     name: "USDT",
-    network: "ERC20",
+    network: "TRC20",
     address: "TJ1qJE91ZYQwJdm6qBESpWMB8eXBwmvbvP",
   },
   {
