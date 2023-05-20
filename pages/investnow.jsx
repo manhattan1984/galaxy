@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import USDT from "../public/qr-codes/usdt.jpeg";
+import USDTERC from "../public/qr-codes/usdt-erc.jpeg";
 import BTC from "../public/qr-codes/btc.jpeg";
 import Image from "next/image";
 import { CopyToClipboard } from "react-copy-to-clipboard";
@@ -20,6 +21,12 @@ const wallets = [
     name: "USDT",
     network: "TRC20",
     address: "TJ1qJE91ZYQwJdm6qBESpWMB8eXBwmvbvP",
+  },
+  {
+    qrCode: USDTERC,
+    name: "USDT",
+    network: "ERC20",
+    address: "0x3a6533db9073f899df478cf0ded55a142be6872c",
   },
   {
     qrCode: BTC,
