@@ -17,7 +17,7 @@ const Document = () => {
       <body>
         <Main />
         <NextScript />
-          <Script>
+          <Script id="smartsupp-live-chat">
         {`
 var _smartsupp = _smartsupp || {};
 _smartsupp.key = 'b7b8816e4b744e14d300bbf938109767e53abf91';
