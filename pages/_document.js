@@ -19,7 +19,7 @@ const Document = () => {
         <NextScript />
         <Script
         strategy="afterInteractive"
-        src="//code.jivosite.com/widget/RBAOf6kcjv"
+        src="//code.jivosite.com/widget/7CfMogGV5v"
         async
       /> 
       </body>
