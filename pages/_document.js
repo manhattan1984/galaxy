@@ -17,18 +17,13 @@ const Document = () => {
       <body>
         <Main />
         <NextScript />
-        <Script id="smartupps-chat">
-        {`
-var _smartsupp = _smartsupp || {};
-_smartsupp.key = '0be2be1b211175259e856d18357003e5964564c6';
-window.smartsupp||(function(d) {
-  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-  c.type='text/javascript';c.charset='utf-8';c.async=true;
-  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-})(document);
-`}
-      </Script>
+
+
+        <Script
+        strategy="afterInteractive"
+        src="//code.tidio.co/hrtzvetfvkemfpywgicjsponegkkv1uq.js"
+        async
+      /> 
       </body>
     </Html>
   );
