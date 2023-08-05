@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
-import USDT from "../public/qr-codes/usdt.jpeg";
-import USDTERC from "../public/qr-codes/usdt-erc.jpeg";
-import BTC from "../public/qr-codes/btc.jpeg";
+import USDT from "../public/usdt.jpeg";
+import USDTERC from "../public/usdt-erc.jpeg";
+import BTC from "../public/btc.jpeg";
 import Image from "next/image";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useSnackbar } from "notistack";
@@ -20,19 +20,19 @@ const wallets = [
     qrCode: USDT,
     name: "USDT",
     network: "TRC20",
-    address: "TJ1qJE91ZYQwJdm6qBESpWMB8eXBwmvbvP",
+    address: "TVF5KgGasGD266JfG56oGZq2qbsVVKn8TX",
   },
   {
     qrCode: USDTERC,
     name: "USDT",
     network: "ERC20",
-    address: "0x3a6533db9073f899df478cf0ded55a142be6872c",
+    address: "0x10e64C9FfdAf796186A11f2682516E805D7ae719",
   },
   {
     qrCode: BTC,
     name: "BTC",
     network: "BTC",
-    address: "18dyBMUs1w3RW5DCnQrtkZDiS3Dbu9qHNC",
+    address: "bc1quyjcg7h4sqqq6uhwaphpzcfckx5z34cussrlqv",
   },
 ];
 
