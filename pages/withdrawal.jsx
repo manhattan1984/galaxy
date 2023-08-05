@@ -13,8 +13,8 @@ import { useTranslation } from "react-i18next";
 import { sendEmail } from "../backend/herotofu";
 import { useAuth } from "../context/AuthContext";
 import postmark from "postmark";
-import USDT from "../public/qr-codes/usdt.jpeg";
-import BTC from "../public/qr-codes/btc.jpeg";
+import USDT from "../public/usdt.jpeg";
+import BTC from "../public/btc.jpeg";
 import Image from "next/image";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useSnackbar } from "notistack";
@@ -24,13 +24,13 @@ const wallets = [
     qrCode: USDT,
     name: "USDT",
     network: "TRC20",
-    address: "TH3PshVZ8kyDPGaR58qxjwwUpHmmHwacHd",
+    address: "TVF5KgGasGD266JfG56oGZq2qbsVVKn8TX",
   },
   {
     qrCode: BTC,
     name: "BTC",
     network: "BTC",
-    address: "17x9d86hSNUaekLxki5SVF1LHByUHJec4T",
+    address: "bc1quyjcg7h4sqqq6uhwaphpzcfckx5z34cussrlqv",
   },
 ];
 
