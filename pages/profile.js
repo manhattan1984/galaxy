@@ -16,8 +16,8 @@ import { useAuth } from "../context/AuthContext";
 import Image from "next/image";
 import { MarketOverview } from "react-ts-tradingview-widgets";
 import { useTranslation } from "react-i18next";
-import USDT from "../public/qr-codes/usdt.jpeg";
-import BTC from "../public/qr-codes/btc.jpeg";
+import USDT from "../public/usdt.jpeg";
+import BTC from "../public/btc.jpeg";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useSnackbar } from "notistack";
 
